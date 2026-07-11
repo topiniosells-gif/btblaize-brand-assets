@@ -6,21 +6,36 @@
 <title>Profile Pic — BT Marketing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
 <style>
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{background:#0a1120;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:30px 16px;font-family:"JetBrains Mono",monospace;}
-  .hint{color:#8b93a2;font-size:12px;letter-spacing:.06em;text-align:center;line-height:1.7;max-width:360px;}
+  body{background:#0a1120;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:30px 16px;font-family:"JetBrains Mono",monospace;}
+  .hint{color:#8b93a2;font-size:12px;letter-spacing:.05em;text-align:center;line-height:1.7;max-width:360px;}
   .hint b{color:#c6a273;}
-  .pic{width:320px;height:320px;border-radius:50%;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.55);border:1px solid rgba(198,162,115,.25);}
-  .pic img{width:100%;height:100%;object-fit:cover;display:block;}
-  .dl{color:#c6a273;font-size:12px;letter-spacing:.06em;text-decoration:none;border:1px solid rgba(198,162,115,.4);padding:9px 16px;border-radius:6px;}
-  .dl:hover{background:rgba(198,162,115,.1);}
+
+  /* the square he screenshots — content is inside the safe circle */
+  .tile{width:360px;height:360px;position:relative;overflow:hidden;border-radius:26px;
+    background:radial-gradient(130% 110% at 50% 0%, #1e2e4c 0%, #152239 48%, #0f1a2e 100%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+    box-shadow:0 22px 60px rgba(0,0,0,.55);}
+  .tile::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.09;mix-blend-mode:overlay;}
+  .tile::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+    background:radial-gradient(58% 40% at 50% 4%, rgba(198,162,115,.18), transparent 70%);}
+  .guide{position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(233,226,210,.14);z-index:1;}
+  .mark{position:relative;z-index:2;width:47%;height:auto;filter:drop-shadow(0 4px 12px rgba(0,0,0,.35));}
+  .word{position:relative;z-index:2;font-family:"Montserrat",sans-serif;font-weight:600;font-size:22px;letter-spacing:.24em;color:#c6a273;text-transform:uppercase;}
+
+  .note{color:#c3bcab;font-size:11px;}
 </style>
 </head>
 <body>
-  <p class="hint">Your profile picture — your real BT Marketing mark on navy.<br /><b>Screenshot the circle</b> (or download below) → Instagram → Change photo.</p>
-  <div class="pic"><img src="profile-pic.png" alt="BT Marketing profile picture" /></div>
-  <a class="dl" href="profile-pic.png" download>Download the file</a>
+  <p class="hint">Your profile picture — the BT mark + <b>BT MARKETING</b>.<br /><b>Screenshot this square</b> → Instagram → Change photo. It's centered inside the circle (dashed line) so the crop looks perfect.</p>
+  <div class="tile">
+    <div class="guide"></div>
+    <img class="mark" src="bt-mark.png" alt="BT mark" />
+    <div class="word">BT Marketing</div>
+  </div>
+  <p class="note">navy · brass · Montserrat</p>
 </body>
 </html>
