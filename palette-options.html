@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Palette Options — @btblaize</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --disp:"Barlow Condensed","Arial Narrow",sans-serif;
+    --body:"Barlow",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#15171b;color:#e9e9ea;font-family:var(--body);padding:32px 16px 80px;-webkit-font-smoothing:antialiased;}
+  .head{max-width:640px;margin:0 auto 30px;text-align:center;}
+  .head h1{font-family:var(--disp);text-transform:uppercase;font-size:24px;letter-spacing:.02em;}
+  .head p{font-family:var(--mono);font-size:12px;color:#8a8f98;margin-top:8px;line-height:1.6;}
+  .head .rec{color:#c9a24b;}
+
+  .combos{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:22px;}
+  .combo{border:1px solid #2a2d34;border-radius:14px;overflow:hidden;background:#191c21;}
+  .combo.pick{border-color:#c9a24b;}
+  .swatches{display:flex;height:56px;}
+  .swatches div{flex:1;}
+  .meta{display:grid;grid-template-columns:1fr;gap:0;}
+  @media(min-width:620px){.meta{grid-template-columns:1.1fr 1fr;}}
+  .info{padding:20px 22px;}
+  .info h3{font-family:var(--disp);text-transform:uppercase;font-size:22px;letter-spacing:.01em;display:flex;align-items:center;gap:10px;}
+  .info h3 .tag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#c9a24b;border:1px solid #c9a24b;border-radius:20px;padding:2px 8px;}
+  .info .vibe{color:#a9adb5;font-size:14px;margin:8px 0 12px;line-height:1.5;}
+  .info .hexes{display:flex;flex-wrap:wrap;gap:6px;}
+  .info .hex{font-family:var(--mono);font-size:10.5px;color:#c8ccd3;border:1px solid #2a2d34;border-radius:5px;padding:3px 7px;}
+
+  /* applied sample */
+  .sample{padding:26px 22px;display:flex;flex-direction:column;justify-content:center;gap:14px;min-height:150px;position:relative;}
+  .sample .mm{width:44px;height:44px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:21px;}
+  .sample .hl{font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:26px;line-height:.95;}
+  .sample .btn{align-self:flex-start;font-family:var(--mono);font-size:12px;font-weight:600;padding:8px 15px;border-radius:6px;letter-spacing:.03em;}
+
+  /* 1 · navy + beige */
+  .s1{background:#152239;}
+  .s1 .mm{background:#c9a24b;color:#152239;}
+  .s1 .hl{color:#e9e2d2;} .s1 .hl em{color:#c9a24b;font-style:normal;}
+  .s1 .btn{background:#c9a24b;color:#152239;}
+  /* 2 · charcoal + cream + emerald */
+  .s2{background:#f1ece1;}
+  .s2 .mm{background:#1a1c1e;color:#f1ece1;}
+  .s2 .hl{color:#1a1c1e;} .s2 .hl em{color:#1f8a5b;font-style:normal;}
+  .s2 .btn{background:#1f8a5b;color:#fff;}
+  /* 3 · teal + sand + copper */
+  .s3{background:#0f3d3a;}
+  .s3 .mm{background:#b9683c;color:#0f3d3a;}
+  .s3 .hl{color:#ede3d0;} .s3 .hl em{color:#e08a54;font-style:normal;}
+  .s3 .btn{background:#b9683c;color:#fff;}
+  /* 4 · midnight + offwhite + amber */
+  .s4{background:#0e1830;}
+  .s4 .mm{background:#e0a43c;color:#0e1830;}
+  .s4 .hl{color:#f4f2ec;} .s4 .hl em{color:#e0a43c;font-style:normal;}
+  .s4 .btn{background:#e0a43c;color:#0e1830;}
+  /* 5 · hunter green + cream + gold */
+  .s5{background:#eae2cf;}
+  .s5 .mm{background:#163a2b;color:#eae2cf;}
+  .s5 .hl{color:#163a2b;} .s5 .hl em{color:#b08d3f;font-style:normal;}
+  .s5 .btn{background:#163a2b;color:#eae2cf;}
+</style>
+</head>
+<body>
+  <div class="head">
+    <h1>5 Premium Palettes</h1>
+    <p>Each shown "in use" — the mark, a headline, a button. <span class="rec">#1 is my pick</span> (your instinct, and the strongest fit). Tell me the number.</p>
+  </div>
+
+  <div class="combos">
+
+    <!-- 1 -->
+    <div class="combo pick">
+      <div class="swatches"><div style="background:#0f1a2e"></div><div style="background:#152239"></div><div style="background:#c9a24b"></div><div style="background:#d9cfbe"></div><div style="background:#e9e2d2"></div></div>
+      <div class="meta">
+        <div class="info">
+          <h3>1 · Navy &amp; Beige <span class="tag">My pick</span></h3>
+          <div class="vibe">Timeless, trustworthy, premium. "I run a real business." The safest strong choice — reads authority + calm. Brass gives it the polish.</div>
+          <div class="hexes"><span class="hex">#152239 navy</span><span class="hex">#E9E2D2 beige</span><span class="hex">#C9A24B brass</span></div>
+        </div>
+        <div class="sample s1"><div class="mm">BT</div><div class="hl">More jobs.<br /><em>Less chasing.</em></div><div class="btn">DM "SITE"</div></div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="combo">
+      <div class="swatches"><div style="background:#1a1c1e"></div><div style="background:#f1ece1"></div><div style="background:#d8d1c2"></div><div style="background:#1f8a5b"></div><div style="background:#0f5132"></div></div>
+      <div class="meta">
+        <div class="info">
+          <h3>2 · Charcoal &amp; Cream</h3>
+          <div class="vibe">Editorial, minimal, modern. Light + bright with one rich emerald accent. Feels like a high-end studio. Clean and confident.</div>
+          <div class="hexes"><span class="hex">#1A1C1E charcoal</span><span class="hex">#F1ECE1 cream</span><span class="hex">#1F8A5B emerald</span></div>
+        </div>
+        <div class="sample s2"><div class="mm">BT</div><div class="hl">More jobs.<br /><em>Less chasing.</em></div><div class="btn">DM "SITE"</div></div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="combo">
+      <div class="swatches"><div style="background:#0a2a28"></div><div style="background:#0f3d3a"></div><div style="background:#b9683c"></div><div style="background:#ede3d0"></div><div style="background:#e08a54"></div></div>
+      <div class="meta">
+        <div class="info">
+          <h3>3 · Teal &amp; Sand</h3>
+          <div class="vibe">Distinctive + premium. Deep teal with warm copper — sophisticated, a little different, still calm. Stands out without being loud.</div>
+          <div class="hexes"><span class="hex">#0F3D3A teal</span><span class="hex">#EDE3D0 sand</span><span class="hex">#B9683C copper</span></div>
+        </div>
+        <div class="sample s3"><div class="mm">BT</div><div class="hl">More jobs.<br /><em>Less chasing.</em></div><div class="btn">DM "SITE"</div></div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="combo">
+      <div class="swatches"><div style="background:#0a1224"></div><div style="background:#0e1830"></div><div style="background:#e0a43c"></div><div style="background:#f4f2ec"></div><div style="background:#26406e"></div></div>
+      <div class="meta">
+        <div class="info">
+          <h3>4 · Midnight &amp; Amber</h3>
+          <div class="vibe">Techy but premium — fits the "automation" side of what you do. Deep navy-black + a warm amber pop. Modern SaaS energy without being cold.</div>
+          <div class="hexes"><span class="hex">#0E1830 midnight</span><span class="hex">#F4F2EC off-white</span><span class="hex">#E0A43C amber</span></div>
+        </div>
+        <div class="sample s4"><div class="mm">BT</div><div class="hl">More jobs.<br /><em>Less chasing.</em></div><div class="btn">DM "SITE"</div></div>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="combo">
+      <div class="swatches"><div style="background:#0f2a1f"></div><div style="background:#163a2b"></div><div style="background:#b08d3f"></div><div style="background:#eae2cf"></div><div style="background:#c9a24b"></div></div>
+      <div class="meta">
+        <div class="info">
+          <h3>5 · Hunter Green &amp; Cream</h3>
+          <div class="vibe">Classic, preppy, "old money." A muted green (NOT the loud metallic) with gold + cream. Timeless and premium if you still love green.</div>
+          <div class="hexes"><span class="hex">#163A2B hunter</span><span class="hex">#EAE2CF cream</span><span class="hex">#B08D3F gold</span></div>
+        </div>
+        <div class="sample s5"><div class="mm">BT</div><div class="hl">More jobs.<br /><em>Less chasing.</em></div><div class="btn">DM "SITE"</div></div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
