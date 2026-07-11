@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Logo Lockups — @btblaize (Isle of Man Green + Kyalami Orange)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --g-hi:#22b891; --g:#0f6b56; --g-deep:#0a4a3c; --g-shadow:#062e26;
+    --orange:#e85e27; --orange-hi:#ff7d3f;
+    --cream:#f6f2e9; --cream-dim:#cdd6c9; --cream-faint:#9fb0a3;
+    --hair:rgba(255,255,255,.16);
+    --disp:"Barlow Condensed","Arial Narrow",sans-serif;
+    --body:"Barlow",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#04201a;font-family:var(--body);color:var(--cream);padding:30px 16px 80px;-webkit-font-smoothing:antialiased;}
+  .phead{max-width:560px;margin:0 auto 26px;text-align:center;}
+  .phead h1{font-family:var(--disp);text-transform:uppercase;font-size:22px;color:var(--orange);letter-spacing:.02em;}
+  .phead p{font-family:var(--mono);font-size:12px;color:var(--cream-faint);margin-top:8px;line-height:1.5;}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px;margin:0 auto;}
+  @media(min-width:640px){.grid{grid-template-columns:repeat(3,1fr);}}
+  .cell{border-radius:14px;min-height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:26px 18px;position:relative;overflow:hidden;border:1px solid var(--hair);}
+  .cap{position:absolute;bottom:9px;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--cream-faint);}
+
+  /* grounds */
+  .paint{background:radial-gradient(135% 95% at 27% 12%, #2ec39c 0%, #16906f 26%, #0e6250 52%, #0a4535 78%, #06342a 100%);}
+  .paint::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(122deg, rgba(255,255,255,.16) 0%, transparent 34%, transparent 62%, rgba(255,255,255,.12) 100%),radial-gradient(60% 40% at 72% 0%, rgba(255,255,255,.16), transparent 70%);
+    mix-blend-mode:screen;}
+  .paint > *{position:relative;z-index:2;}
+  .cream-bg{background:var(--cream);border-color:#d8d2c4;}
+  .cream-bg .cap{color:#8a8f82;}
+  .dark-bg{background:#052018;}
+
+  /* monograms */
+  .m-out{width:64px;height:64px;border:3px solid var(--orange);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:30px;color:var(--orange);}
+  .m-fill{width:64px;height:64px;background:var(--orange);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:30px;color:#2a0f04;box-shadow:0 4px 16px rgba(232,94,39,.4);}
+  .m-green-fill{width:64px;height:64px;background:linear-gradient(145deg,#1a9f7c,#0c5341);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:30px;color:var(--orange);box-shadow:inset 0 2px 6px rgba(255,255,255,.25),0 4px 14px rgba(0,0,0,.3);}
+  .m-tick{position:relative;}
+  .m-tick::after{content:"";position:absolute;top:-7px;right:-7px;width:18px;height:18px;background:var(--orange);border-radius:50%;border:3px solid #0e6250;}
+
+  /* wordmarks */
+  .wm{font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:23px;letter-spacing:.02em;text-align:center;line-height:.95;}
+  .wm .dot{color:var(--orange);}
+  .wm.cream{color:var(--cream);}
+  .wm.green{color:#0c5341;}
+  .wm.orange{color:var(--orange);}
+  .handle{font-family:var(--mono);font-size:11px;letter-spacing:.12em;}
+  .handle.o{color:var(--orange);} .handle.g{color:#0c5341;} .handle.c{color:var(--cream-dim);}
+
+  .divider{max-width:720px;margin:40px auto 20px;display:flex;align-items:center;gap:12px;}
+  .divider .t{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);white-space:nowrap;}
+  .divider .l{height:1px;background:rgba(255,255,255,.12);flex:1;}
+</style>
+</head>
+<body>
+  <div class="phead">
+    <h1>Logo Lockups · Your Colors</h1>
+    <p>The "BT" mark + wordmark in Isle of Man Green + Kyalami Orange.<br />Tell me your favorite and I'll make it the official one (and generate clean PNG/SVG files).</p>
+  </div>
+
+  <div class="divider"><span class="t">The monogram (profile pic + highlights)</span><span class="l"></span></div>
+  <div class="grid">
+    <div class="cell paint"><div class="m-out">BT</div><span class="cap">Orange outline · on paint</span></div>
+    <div class="cell paint"><div class="m-fill">BT</div><span class="cap">Orange solid · on paint</span></div>
+    <div class="cell paint"><div class="m-out m-tick">BT</div><span class="cap">Outline + orange dot</span></div>
+    <div class="cell dark-bg"><div class="m-green-fill">BT</div><span class="cap">Metallic green tile · orange BT</span></div>
+    <div class="cell cream-bg"><div class="m-fill">BT</div><span class="cap">Orange solid · on cream</span></div>
+    <div class="cell cream-bg"><div class="m-green-fill">BT</div><span class="cap">Green tile · on cream</span></div>
+  </div>
+
+  <div class="divider"><span class="t">The wordmark (headers + your site)</span><span class="l"></span></div>
+  <div class="grid">
+    <div class="cell paint"><div class="wm cream">Blaize Topinio<span class="dot">.</span></div><div class="handle o">@BTBLAIZE</div><span class="cap">Cream + orange dot · on paint</span></div>
+    <div class="cell paint"><div class="wm orange">Blaize Topinio<span class="dot" style="color:var(--cream)">.</span></div><div class="handle c">@BTBLAIZE</div><span class="cap">Orange · on paint</span></div>
+    <div class="cell cream-bg"><div class="wm green">Blaize Topinio<span class="dot">.</span></div><div class="handle g">@BTBLAIZE</div><span class="cap">Green + orange dot · on cream</span></div>
+  </div>
+</body>
+</html>

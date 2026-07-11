@@ -3,97 +3,111 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Highlights + Story Graphics — @btblaize</title>
+<title>Highlights + Story Graphics — @btblaize (Isle of Man Green)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --ground:#0b0c0e; --ground-2:#121418; --ground-3:#181b20;
-    --line:#262a31; --ink:#f4f2ee; --ink-dim:#a6abb3; --ink-faint:#71767e; --soft:#c6ccd9;
-    --amber:#eb9a3c; --amber-hi:#ffb35a; --ember:#c9631b; --steel:#6ba3d6; --steel-dim:#3f6b93; --good:#63c98b;
+    /* Isle of Man Green (metallic) + Kyalami Orange */
+    --g-hi:#22b891; --g:#0f6b56; --g-deep:#0a4a3c; --g-shadow:#062e26;
+    --orange:#e85e27; --orange-hi:#ff7d3f;
+    --cream:#f6f2e9; --cream-dim:#cdd6c9; --cream-faint:#9fb0a3;
+    --glass:rgba(5,32,26,.52); --glass-2:rgba(5,32,26,.72); --hair:rgba(255,255,255,.16);
     --disp:"Barlow Condensed","Arial Narrow",sans-serif;
     --body:"Barlow",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{background:#050506;font-family:var(--body);color:var(--ink);padding:30px 16px 80px;-webkit-font-smoothing:antialiased;}
-  .phead{max-width:460px;margin:0 auto 20px;text-align:center;}
-  .phead h1{font-family:var(--disp);text-transform:uppercase;font-size:22px;color:var(--amber);letter-spacing:.02em;}
-  .phead p{font-family:var(--mono);font-size:12px;color:var(--ink-faint);margin-top:8px;line-height:1.5;}
-  .divider{max-width:460px;margin:44px auto 22px;display:flex;align-items:center;gap:12px;}
-  .divider .t{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);white-space:nowrap;}
-  .divider .l{height:1px;background:var(--line);flex:1;}
+  body{background:#04201a;font-family:var(--body);color:var(--cream);padding:30px 16px 80px;-webkit-font-smoothing:antialiased;}
+  .phead{max-width:480px;margin:0 auto 20px;text-align:center;}
+  .phead h1{font-family:var(--disp);text-transform:uppercase;font-size:22px;color:var(--orange);letter-spacing:.02em;}
+  .phead p{font-family:var(--mono);font-size:12px;color:var(--cream-faint);margin-top:8px;line-height:1.5;}
+  .divider{max-width:480px;margin:44px auto 22px;display:flex;align-items:center;gap:12px;}
+  .divider .t{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);white-space:nowrap;}
+  .divider .l{height:1px;background:rgba(255,255,255,.12);flex:1;}
 
-  /* highlight covers */
-  .covers{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;max-width:520px;margin:0 auto;}
+  /* ===== the metallic paint ===== */
+  .paint{position:relative;overflow:hidden;
+    background:
+      radial-gradient(135% 95% at 27% 10%, #2ec39c 0%, #16906f 26%, #0e6250 52%, #0a4535 76%, #06342a 100%);}
+  /* glossy diagonal sheen */
+  .paint::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      linear-gradient(122deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.04) 16%, transparent 34%, transparent 62%, rgba(255,255,255,.05) 82%, rgba(255,255,255,.13) 100%),
+      radial-gradient(60% 40% at 72% 0%, rgba(255,255,255,.18), transparent 70%);
+    mix-blend-mode:screen;opacity:.9;}
+  /* fine metallic flake + bottom shade */
+  .paint::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:radial-gradient(rgba(255,255,255,.05) .5px, transparent .6px), linear-gradient(180deg, transparent 55%, rgba(0,0,0,.28) 100%);
+    background-size:5px 5px, 100% 100%;}
+  .paint > *{position:relative;z-index:2;}
+
+  /* ===== highlight covers ===== */
+  .covers{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;max-width:540px;margin:0 auto;}
   .cov{display:flex;flex-direction:column;align-items:center;gap:10px;}
-  .cov .circ{width:96px;height:96px;border-radius:50%;border:1px solid var(--line);
-    background:radial-gradient(circle at 50% 38%,#1a1e25,var(--ground));display:flex;align-items:center;justify-content:center;position:relative;}
-  .cov .circ svg{width:40px;height:40px;stroke:var(--amber);fill:none;stroke-width:1.5;}
-  .cov .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim);}
+  .cov .circ{width:100px;height:100px;border-radius:50%;border:1px solid var(--hair);display:flex;align-items:center;justify-content:center;
+    box-shadow:inset 0 2px 10px rgba(255,255,255,.14), inset 0 -8px 18px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.35);}
+  .cov .circ svg{width:42px;height:42px;stroke:var(--orange);fill:none;stroke-width:1.6;filter:drop-shadow(0 1px 2px rgba(0,0,0,.4));}
+  .cov .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-dim);}
 
-  /* story slides 9:16 */
+  /* ===== story slides 9:16 ===== */
   .stories{display:flex;flex-direction:column;align-items:center;gap:30px;}
   .swrap{width:100%;max-width:340px;}
-  .snum{font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;}
-  .story{aspect-ratio:9/16;border-radius:20px;overflow:hidden;position:relative;border:1px solid var(--line);
-    background:radial-gradient(circle at 50% 22%,#161a21,var(--ground) 62%);padding:40px 30px;display:flex;flex-direction:column;}
-  .story::before{content:"";position:absolute;inset:0;pointer-events:none;
-    background-image:linear-gradient(#ffffff07 1px,transparent 1px),linear-gradient(90deg,#ffffff07 1px,transparent 1px);
-    background-size:34px 34px;-webkit-mask-image:radial-gradient(circle at 50% 16%,#000,transparent 74%);mask-image:radial-gradient(circle at 50% 16%,#000,transparent 74%);}
-  .story > *{position:relative;z-index:1;}
-  .story .kick{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);}
+  .snum{font-family:var(--mono);font-size:11px;color:var(--cream-faint);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;}
+  .story{aspect-ratio:9/16;border-radius:22px;padding:40px 30px;display:flex;flex-direction:column;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 10px 34px rgba(0,0,0,.4);}
+  .story .kick{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);}
   .story .lock{margin-top:auto;display:flex;align-items:center;gap:9px;padding-top:20px;}
-  .story .lock .mm{width:30px;height:30px;border:1.6px solid var(--amber);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:15px;color:var(--amber);}
-  .story .lock .h{font-family:var(--mono);font-size:11px;color:var(--ink-dim);letter-spacing:.08em;}
+  .story .lock .mm{width:32px;height:32px;border:2px solid var(--orange);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:16px;color:var(--orange);box-shadow:inset 0 1px 4px rgba(255,255,255,.2);}
+  .story .lock .h{font-family:var(--mono);font-size:11px;color:var(--cream-dim);letter-spacing:.08em;}
 
   .h-xl{font-family:var(--disp);text-transform:uppercase;font-weight:700;line-height:.94;}
-  .story .big{font-size:44px;margin:16px 0 14px;}
-  .story .big em{color:var(--amber);font-style:normal;}
-  .story .sub{color:var(--ink-dim);font-size:15px;line-height:1.5;}
+  .story .big{font-size:44px;margin:16px 0 14px;color:var(--orange);text-shadow:0 2px 10px rgba(0,0,0,.35);}
+  .story .big em{color:var(--cream);font-style:normal;}
+  .story .sub{color:var(--cream);font-size:15px;line-height:1.5;}
 
   /* bring list */
-  .brings{margin-top:20px;display:flex;flex-direction:column;gap:14px;}
-  .bring{display:flex;gap:12px;align-items:flex-start;}
-  .bring .bi{width:30px;height:30px;border:1px solid var(--steel-dim);border-radius:7px;background:var(--ground-3);display:flex;align-items:center;justify-content:center;flex:none;}
-  .bring .bi svg{width:16px;height:16px;stroke:var(--steel);fill:none;stroke-width:1.8;}
-  .bring .bt-h{font-family:var(--disp);text-transform:uppercase;font-weight:600;font-size:16px;line-height:1;margin-bottom:3px;}
-  .bring .bt-d{font-size:12px;color:var(--ink-dim);line-height:1.35;}
+  .brings{margin-top:20px;display:flex;flex-direction:column;gap:12px;}
+  .bring{display:flex;gap:12px;align-items:flex-start;background:var(--glass);border:1px solid var(--hair);border-radius:10px;padding:11px 13px;}
+  .bring .bi{width:30px;height:30px;border:1px solid rgba(255,255,255,.22);border-radius:7px;background:var(--glass-2);display:flex;align-items:center;justify-content:center;flex:none;}
+  .bring .bi svg{width:16px;height:16px;stroke:var(--orange);fill:none;stroke-width:1.9;}
+  .bring .bt-h{font-family:var(--disp);text-transform:uppercase;font-weight:600;font-size:16px;line-height:1;margin-bottom:3px;color:var(--cream);}
+  .bring .bt-d{font-size:12px;color:var(--cream-dim);line-height:1.35;}
 
   /* steps */
   .steps{margin-top:22px;display:flex;flex-direction:column;gap:16px;}
   .stp{display:flex;gap:14px;align-items:flex-start;}
-  .stp .sn{font-family:var(--disp);font-weight:700;font-size:30px;color:var(--amber);line-height:.9;width:30px;flex:none;}
-  .stp .sh{font-family:var(--disp);text-transform:uppercase;font-weight:600;font-size:17px;margin-bottom:2px;}
-  .stp .sd{font-size:12.5px;color:var(--ink-dim);line-height:1.4;}
+  .stp .sn{font-family:var(--disp);font-weight:700;font-size:32px;color:var(--orange);line-height:.9;width:32px;flex:none;text-shadow:0 2px 6px rgba(0,0,0,.3);}
+  .stp .sh{font-family:var(--disp);text-transform:uppercase;font-weight:600;font-size:17px;margin-bottom:2px;color:var(--cream);}
+  .stp .sd{font-size:12.5px;color:var(--cream-dim);line-height:1.4;}
 
   /* trades chips */
   .tchips{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px;}
-  .tchip{font-family:var(--mono);font-size:12px;color:var(--soft);border:1px solid var(--line);border-radius:20px;padding:7px 13px;letter-spacing:.02em;}
-  .tchip.more{color:var(--amber);border-color:#4a3418;}
+  .tchip{font-family:var(--mono);font-size:12px;color:var(--cream);border:1px solid var(--hair);background:var(--glass);border-radius:20px;padding:7px 13px;letter-spacing:.02em;}
+  .tchip.more{color:var(--orange);border-color:var(--orange);}
 
   /* connect */
   .story.connect{justify-content:center;text-align:center;align-items:center;}
   .story.connect .big{font-size:40px;}
-  .story.connect .kw{display:inline-block;font-family:var(--mono);font-weight:600;background:#170d02;color:var(--amber);padding:4px 14px;border-radius:6px;margin:18px 0;font-size:18px;letter-spacing:.05em;}
-  .story.connect .contact{font-family:var(--mono);font-size:13px;color:var(--ink-dim);line-height:1.9;}
+  .story.connect .kw{display:inline-block;font-family:var(--mono);font-weight:600;background:var(--orange);color:#2a0f04;padding:5px 15px;border-radius:6px;margin:18px 0;font-size:18px;letter-spacing:.05em;box-shadow:0 4px 14px rgba(232,94,39,.4);}
+  .story.connect .contact{font-family:var(--mono);font-size:13px;color:var(--cream);line-height:1.9;}
   .story.connect .lock{justify-content:center;}
 </style>
 </head>
 <body>
   <div class="phead">
-    <h1>Highlights + Story Graphics</h1>
-    <p>Screenshot each → post to your Story → tap "Highlight" → save to the matching one.<br />Same brand kit as your future site, so everything matches. Swap the numbers for real ones as wins come in.</p>
+    <h1>Highlights + Stories · Isle of Man Green</h1>
+    <p>Metallic green paint + Kyalami orange — matched to your BMW.<br />Screenshot each → post to Story → save to the matching Highlight.</p>
   </div>
 
   <!-- HIGHLIGHT COVERS -->
   <div class="divider"><span class="t">Highlight covers</span><span class="l"></span></div>
   <div class="covers">
-    <div class="cov"><div class="circ"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.8.7-5 4.6 1.4 6.7L12 17.8 5.9 20.9l1.4-6.7-5-4.6 6.8-.7z"/></svg></div><div class="lbl">Wins</div></div>
-    <div class="cov"><div class="circ"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 6 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-6-3.8-9s1.3-6.5 3.8-9z"/></svg></div><div class="lbl">What I Do</div></div>
-    <div class="cov"><div class="circ"><svg viewBox="0 0 24 24"><path d="M12 2l7 4v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><div class="lbl">What I Bring</div></div>
-    <div class="cov"><div class="circ"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M7 3v4M17 3v4"/></svg></div><div class="lbl">The Work</div></div>
-    <div class="cov"><div class="circ"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></div><div class="lbl">Process</div></div>
+    <div class="cov"><div class="circ paint"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.8.7-5 4.6 1.4 6.7L12 17.8 5.9 20.9l1.4-6.7-5-4.6 6.8-.7z"/></svg></div><div class="lbl">Wins</div></div>
+    <div class="cov"><div class="circ paint"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 6 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-6-3.8-9s1.3-6.5 3.8-9z"/></svg></div><div class="lbl">What I Do</div></div>
+    <div class="cov"><div class="circ paint"><svg viewBox="0 0 24 24"><path d="M12 2l7 4v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><div class="lbl">What I Bring</div></div>
+    <div class="cov"><div class="circ paint"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M7 3v4M17 3v4"/></svg></div><div class="lbl">The Work</div></div>
+    <div class="cov"><div class="circ paint"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></div><div class="lbl">Process</div></div>
   </div>
 
   <!-- STORY GRAPHICS -->
@@ -103,10 +117,10 @@
     <!-- 1 · WHAT I DO -->
     <div class="swrap">
       <div class="snum">Story 1 · "What I Do" highlight</div>
-      <div class="story">
+      <div class="story paint">
         <span class="kick">// What I Do</span>
-        <div class="big h-xl">I make contractors the <em>obvious choice</em> online.</div>
-        <div class="sub">I build contractor websites + the automation system that turns Google searches into booked jobs — live in 3 days, then it runs itself.</div>
+        <div class="big h-xl">I make businesses the <em>obvious choice</em> online.</div>
+        <div class="sub">I build websites + automation systems that save you time and make you more money — set up in days, then it runs itself.</div>
         <div class="lock"><div class="mm">BT</div><span class="h">@btblaize · Blaize Topinio</span></div>
       </div>
     </div>
@@ -114,14 +128,14 @@
     <!-- 2 · WHAT I BRING -->
     <div class="swrap">
       <div class="snum">Story 2 · "What I Bring" highlight</div>
-      <div class="story">
+      <div class="story paint">
         <span class="kick">// What I Bring To The Table</span>
         <div class="big h-xl" style="font-size:36px;margin-bottom:6px;">Not a website.<br /><em>A machine.</em></div>
         <div class="brings">
-          <div class="bring"><div class="bi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/></svg></div><div><div class="bt-h">A site that books jobs</div><div class="bt-d">Fast, mobile, ranks on Google. Live in 3 days.</div></div></div>
-          <div class="bring"><div class="bi"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg></div><div><div class="bt-h">Leads text you back — instantly</div><div class="bt-d">No lead goes cold while you're on the job.</div></div></div>
+          <div class="bring"><div class="bi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/></svg></div><div><div class="bt-h">A site that books jobs</div><div class="bt-d">Fast, mobile, ranks on Google. Live in days.</div></div></div>
+          <div class="bring"><div class="bi"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg></div><div><div class="bt-h">Leads text you back — instantly</div><div class="bt-d">No lead goes cold while you're working.</div></div></div>
           <div class="bring"><div class="bi"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.4 2.5 1.2 3.6.6 4.8L8 9.6a16 16 0 0 0 6 6l1.1-1.1c.6-.6 2.3.2 4.8.6a2 2 0 0 1 1.7 2z"/></svg></div><div><div class="bt-h">Call-to-Connect</div><div class="bt-d">Form submit → you + the lead on the phone in 5 min.</div></div></div>
-          <div class="bring"><div class="bi"><svg viewBox="0 0 24 24"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg></div><div><div class="bt-h">Your own work number + full management</div><div class="bt-d">I run it. You stay on the tools.</div></div></div>
+          <div class="bring"><div class="bi"><svg viewBox="0 0 24 24"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg></div><div><div class="bt-h">Your own work number + full management</div><div class="bt-d">I run it. You focus on the business.</div></div></div>
         </div>
         <div class="lock"><div class="mm">BT</div><span class="h">@btblaize</span></div>
       </div>
@@ -130,7 +144,7 @@
     <!-- 3 · HOW IT WORKS -->
     <div class="swrap">
       <div class="snum">Story 3 · "Process" highlight</div>
-      <div class="story">
+      <div class="story paint">
         <span class="kick">// How It Works</span>
         <div class="big h-xl" style="font-size:38px;">No risk.<br /><em>See it first.</em></div>
         <div class="steps">
@@ -145,15 +159,14 @@
     <!-- 4 · WHO I BUILD FOR -->
     <div class="swrap">
       <div class="snum">Story 4 · "What I Do" highlight (2nd slide)</div>
-      <div class="story">
+      <div class="story paint">
         <span class="kick">// Who I Build For</span>
-        <div class="big h-xl" style="font-size:38px;">Built for the <em>trades.</em></div>
-        <div class="sub">If you work with your hands and word-of-mouth is your only plan — this is for you.</div>
+        <div class="big h-xl" style="font-size:38px;">Built for <em>business owners.</em></div>
+        <div class="sub">If you're grinding to grow and word-of-mouth is your only plan — this is for you.</div>
         <div class="tchips">
-          <span class="tchip">Roofing</span><span class="tchip">HVAC</span><span class="tchip">Concrete</span>
-          <span class="tchip">Epoxy</span><span class="tchip">Plumbing</span><span class="tchip">Electrical</span>
-          <span class="tchip">Landscaping</span><span class="tchip">Excavation</span><span class="tchip">Tree Service</span>
-          <span class="tchip">Foundations</span><span class="tchip">Drywall</span><span class="tchip more">+ more</span>
+          <span class="tchip">Contractors</span><span class="tchip">Home Services</span><span class="tchip">Automotive</span>
+          <span class="tchip">Trades</span><span class="tchip">Barbers</span><span class="tchip">Fitness</span>
+          <span class="tchip">Restaurants</span><span class="tchip">Real Estate</span><span class="tchip more">+ more</span>
         </div>
         <div class="lock"><div class="mm">BT</div><span class="h">@btblaize</span></div>
       </div>
@@ -162,7 +175,7 @@
     <!-- 5 · LET'S CONNECT -->
     <div class="swrap">
       <div class="snum">Story 5 · pin to any highlight (the CTA)</div>
-      <div class="story connect">
+      <div class="story paint connect">
         <span class="kick">// Let's Grow Together</span>
         <div class="big h-xl">Want one for your business?</div>
         <div class="sub">See yours first, free. No pressure.</div>
