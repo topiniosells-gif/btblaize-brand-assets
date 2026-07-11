@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Texture Options — Navy & Beige</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy-deep:#0f1a2e; --navy:#152239; --navy-2:#1b2b47;
+    --brass:#c9a24b; --brass-hi:#e0bd6c;
+    --beige:#e9e2d2; --beige-dim:#c3bcab; --beige-faint:#8f97a6;
+    --disp:"Barlow Condensed","Arial Narrow",sans-serif;
+    --body:"Barlow",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#0b1220;color:var(--beige);font-family:var(--body);padding:32px 16px 80px;-webkit-font-smoothing:antialiased;}
+  .head{max-width:600px;margin:0 auto 28px;text-align:center;}
+  .head h1{font-family:var(--disp);text-transform:uppercase;font-size:24px;letter-spacing:.02em;color:var(--brass);}
+  .head p{font-family:var(--mono);font-size:12px;color:var(--beige-faint);margin-top:8px;line-height:1.6;}
+
+  .grid{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(min-width:640px){.grid{grid-template-columns:repeat(3,1fr);}}
+  .tile{aspect-ratio:1;border-radius:14px;border:1px solid #2a3a55;position:relative;overflow:hidden;
+    background:radial-gradient(130% 100% at 30% 12%, var(--navy-2) 0%, var(--navy) 45%, var(--navy-deep) 100%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px;}
+  .tile .tx{position:absolute;inset:0;pointer-events:none;}
+  .tile .mm{width:48px;height:48px;border:2px solid var(--brass);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:23px;color:var(--brass);position:relative;z-index:2;}
+  .tile .lbl{position:relative;z-index:2;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--beige);}
+  .tile .num{position:absolute;top:12px;left:14px;font-family:var(--mono);font-size:12px;color:var(--brass);z-index:2;}
+
+  /* 1 · clean */
+  /* (no overlay) */
+  /* 2 · blueprint grid */
+  .t-grid .tx{background-image:linear-gradient(rgba(201,162,75,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(201,162,75,.10) 1px,transparent 1px);background-size:22px 22px;}
+  /* 3 · fine grain */
+  .t-grain .tx{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.10;mix-blend-mode:overlay;}
+  /* 4 · pinstripe */
+  .t-stripe .tx{background-image:repeating-linear-gradient(45deg,rgba(233,226,210,.06) 0 1px,transparent 1px 9px);}
+  /* 5 · linen weave */
+  .t-linen .tx{background-image:repeating-linear-gradient(0deg,rgba(233,226,210,.05) 0 1px,transparent 1px 4px),repeating-linear-gradient(90deg,rgba(233,226,210,.05) 0 1px,transparent 1px 4px);}
+  /* 6 · glow + dots */
+  .t-glow .tx{background-image:radial-gradient(rgba(233,226,210,.10) 1px,transparent 1.4px),radial-gradient(70% 50% at 50% 0%,rgba(201,162,75,.16),transparent 70%);background-size:16px 16px,100% 100%;}
+</style>
+</head>
+<body>
+  <div class="head">
+    <h1>Pick Your Texture</h1>
+    <p>Same navy + brass, six surfaces. Subtle on purpose — texture should whisper, not shout.<br />Tell me a number (you can even combine, e.g. "grain + glow").</p>
+  </div>
+
+  <div class="grid">
+    <div class="tile"><span class="num">1</span><div class="mm">BT</div><span class="lbl">Clean</span></div>
+    <div class="tile t-grid"><span class="num">2</span><div class="tx"></div><div class="mm">BT</div><span class="lbl">Blueprint grid</span></div>
+    <div class="tile t-grain"><span class="num">3</span><div class="tx"></div><div class="mm">BT</div><span class="lbl">Fine grain</span></div>
+    <div class="tile t-stripe"><span class="num">4</span><div class="tx"></div><div class="mm">BT</div><span class="lbl">Pinstripe</span></div>
+    <div class="tile t-linen"><span class="num">5</span><div class="tx"></div><div class="mm">BT</div><span class="lbl">Linen weave</span></div>
+    <div class="tile t-glow"><span class="num">6</span><div class="tx"></div><div class="mm">BT</div><span class="lbl">Glow + dots</span></div>
+  </div>
+</body>
+</html>
