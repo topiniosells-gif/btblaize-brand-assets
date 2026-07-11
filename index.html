@@ -8,21 +8,31 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
 <style>
-  :root{--navy-deep:#0f1a2e;--navy:#152239;--brass:#c9a24b;--beige:#e9e2d2;--beige-dim:#c3bcab;--beige-faint:#8b93a2;--hair:rgba(233,226,210,.15);}
+  :root{--navy-deep:#0f1a2e;--navy:#152239;--brass:#c6a273;--beige:#e9e2d2;--beige-dim:#c3bcab;--beige-faint:#8b93a2;--hair:rgba(233,226,210,.15);}
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:#0a1120;color:var(--beige);font-family:"Barlow",system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;
     background-image:radial-gradient(120% 90% at 50% 0%,#1a2942,#0a1120 60%);}
   .wrap{max-width:520px;margin:0 auto;padding:46px 22px 70px;}
-  .mm{width:58px;height:58px;border:2px solid var(--brass);border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:27px;color:var(--brass);margin-bottom:22px;box-shadow:0 0 34px -10px rgba(201,162,75,.5);}
+  .mm{width:58px;height:58px;border:2px solid var(--brass);border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:27px;color:var(--brass);margin-bottom:22px;box-shadow:0 0 34px -10px rgba(198,162,115,.5);}
   .eyebrow{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);}
   h1{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-weight:700;font-size:40px;line-height:.95;margin:12px 0 10px;}
   .sub{color:var(--beige-dim);font-size:16px;line-height:1.5;margin-bottom:30px;}
+  .sec{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin:34px 0 14px;display:flex;align-items:center;gap:12px;}
+  .sec::after{content:"";height:1px;background:var(--hair);flex:1;}
   .card{display:block;background:rgba(255,255,255,.04);border:1px solid var(--hair);border-radius:12px;padding:20px 22px;margin-bottom:13px;text-decoration:none;color:inherit;transition:border-color .16s ease,transform .16s ease;}
   .card:hover{border-color:var(--brass);transform:translateY(-2px);}
   .card .ct{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-weight:700;font-size:21px;}
   .card .cd{color:var(--beige-dim);font-size:13.5px;margin-top:4px;}
   .card .go{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--brass);margin-top:10px;display:inline-block;}
-  .tip{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--beige-faint);line-height:1.6;margin-top:22px;border-top:1px solid var(--hair);padding-top:16px;}
+  /* logo file cards */
+  .logo-card{background:rgba(255,255,255,.04);border:1px solid var(--hair);border-radius:12px;padding:18px;margin-bottom:13px;text-align:center;}
+  .logo-card .tile{background:var(--navy);border-radius:10px;padding:22px 16px;margin-bottom:12px;display:flex;align-items:center;justify-content:center;min-height:120px;}
+  .logo-card .tile img{max-width:100%;max-height:120px;height:auto;display:block;}
+  .logo-card .ct{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-weight:700;font-size:19px;}
+  .logo-card .cd{color:var(--beige-dim);font-size:12.5px;margin:3px 0 12px;}
+  .dl{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--brass);text-decoration:none;border:1px solid rgba(198,162,115,.45);padding:9px 18px;border-radius:6px;}
+  .dl:hover{background:rgba(198,162,115,.1);}
+  .tip{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--beige-faint);line-height:1.7;margin-top:22px;border-top:1px solid var(--hair);padding-top:16px;}
 </style>
 </head>
 <body>
@@ -30,14 +40,37 @@
     <div class="mm">BT</div>
     <span class="eyebrow">Brand Assets · @btblaize</span>
     <h1>Post-ready<br />graphics</h1>
-    <p class="sub">Navy &amp; Beige + Brass. Open a page, screenshot, post. Bookmark this link.</p>
+    <p class="sub">Navy &amp; Beige + Brass. Open a page, screenshot or download, post. Bookmark this link.</p>
 
-    <a class="card" href="profile-pic.html"><div class="ct">Profile Picture</div><div class="cd">Your BT avatar — screenshot the circle, set it as your Instagram photo.</div><span class="go">Open →</span></a>
+    <div class="sec">Post these</div>
+    <a class="card" href="profile-pic.html"><div class="ct">Profile Picture</div><div class="cd">Your BT avatar — screenshot the circle or download, set it as your Instagram photo.</div><span class="go">Open →</span></a>
     <a class="card" href="highlights-and-stories.html"><div class="ct">Highlights + Stories</div><div class="cd">5 highlight covers + 5 story graphics. Post to Story → save to Highlights.</div><span class="go">Open →</span></a>
     <a class="card" href="carousel-5-things.html"><div class="ct">The Carousel</div><div class="cd">"5 Things Every Website Needs" — 7 slides, ready as an IG/FB carousel.</div><span class="go">Open →</span></a>
-    <a class="card" href="logo-lockups.html"><div class="ct">Logo Lockups</div><div class="cd">Your BT mark + wordmark in navy, beige, brass.</div><span class="go">Open →</span></a>
 
-    <p class="tip">// To save a slide: open a page → screenshot → crop to the card → post. On a Story, tap "Highlight" to save it.</p>
+    <div class="sec">Your logo files</div>
+
+    <div class="logo-card">
+      <div class="tile"><img src="bt-logo.png" alt="BT Marketing full logo" /></div>
+      <div class="ct">Full Logo</div>
+      <div class="cd">BT Marketing · Marketing That Scales — transparent PNG</div>
+      <a class="dl" href="bt-logo.png" download="BT-Marketing-logo.png">Download / long-press to save</a>
+    </div>
+
+    <div class="logo-card">
+      <div class="tile"><img src="bt-icon.png" alt="BT icon" style="max-height:96px;" /></div>
+      <div class="ct">Icon</div>
+      <div class="cd">The circular BT mark — best for your profile picture</div>
+      <a class="dl" href="bt-icon.png" download="BT-icon.png">Download / long-press to save</a>
+    </div>
+
+    <div class="logo-card">
+      <div class="tile"><img src="bt-submark.png" alt="BT submark" /></div>
+      <div class="ct">Submark</div>
+      <div class="cd">Horizontal lockup — for headers &amp; your website later</div>
+      <a class="dl" href="bt-submark.png" download="BT-submark.png">Download / long-press to save</a>
+    </div>
+
+    <p class="tip">// On your phone: tap "Download," or tap the image and long-press → Save Image.<br />// For your profile PIC, use the round Icon (the full logo goes tiny in a circle). The full logo is great for posts, story slides &amp; your site.</p>
   </div>
 </body>
 </html>
