@@ -3,101 +3,94 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Highlights + Story Graphics — @btblaize (Isle of Man Green)</title>
+<title>Highlights + Story Graphics — @btblaize (Navy & Beige)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
 <style>
   :root{
-    /* Isle of Man Green (metallic) + Kyalami Orange */
-    --g-hi:#22b891; --g:#0f6b56; --g-deep:#0a4a3c; --g-shadow:#062e26;
-    --orange:#e85e27; --orange-hi:#ff7d3f;
-    --cream:#f6f2e9; --cream-dim:#cdd6c9; --cream-faint:#9fb0a3;
-    --glass:rgba(5,32,26,.52); --glass-2:rgba(5,32,26,.72); --hair:rgba(255,255,255,.16);
+    --navy-deep:#0f1a2e; --navy:#152239; --navy-2:#1b2b47;
+    --brass:#c9a24b; --brass-hi:#e0bd6c;
+    --beige:#e9e2d2; --beige-dim:#c3bcab; --beige-faint:#8b93a2;
+    --glass:rgba(255,255,255,.05); --glass-2:rgba(15,26,46,.55); --hair:rgba(233,226,210,.15);
     --disp:"Barlow Condensed","Arial Narrow",sans-serif;
     --body:"Barlow",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{background:#04201a;font-family:var(--body);color:var(--cream);padding:30px 16px 80px;-webkit-font-smoothing:antialiased;}
+  body{background:#0a1120;font-family:var(--body);color:var(--beige);padding:30px 16px 80px;-webkit-font-smoothing:antialiased;}
   .phead{max-width:480px;margin:0 auto 20px;text-align:center;}
-  .phead h1{font-family:var(--disp);text-transform:uppercase;font-size:22px;color:var(--orange);letter-spacing:.02em;}
-  .phead p{font-family:var(--mono);font-size:12px;color:var(--cream-faint);margin-top:8px;line-height:1.5;}
+  .phead h1{font-family:var(--disp);text-transform:uppercase;font-size:22px;color:var(--brass);letter-spacing:.02em;}
+  .phead p{font-family:var(--mono);font-size:12px;color:var(--beige-faint);margin-top:8px;line-height:1.5;}
   .divider{max-width:480px;margin:44px auto 22px;display:flex;align-items:center;gap:12px;}
-  .divider .t{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);white-space:nowrap;}
-  .divider .l{height:1px;background:rgba(255,255,255,.12);flex:1;}
+  .divider .t{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);white-space:nowrap;}
+  .divider .l{height:1px;background:rgba(233,226,210,.12);flex:1;}
 
-  /* ===== the metallic paint ===== */
+  /* ===== navy surface: grain + glow ===== */
   .paint{position:relative;overflow:hidden;
-    background:
-      radial-gradient(135% 95% at 27% 10%, #2ec39c 0%, #16906f 26%, #0e6250 52%, #0a4535 76%, #06342a 100%);}
-  /* glossy diagonal sheen */
-  .paint::before{content:"";position:absolute;inset:0;pointer-events:none;
-    background:
-      linear-gradient(122deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.04) 16%, transparent 34%, transparent 62%, rgba(255,255,255,.05) 82%, rgba(255,255,255,.13) 100%),
-      radial-gradient(60% 40% at 72% 0%, rgba(255,255,255,.18), transparent 70%);
-    mix-blend-mode:screen;opacity:.9;}
-  /* fine metallic flake + bottom shade */
-  .paint::after{content:"";position:absolute;inset:0;pointer-events:none;
-    background-image:radial-gradient(rgba(255,255,255,.05) .5px, transparent .6px), linear-gradient(180deg, transparent 55%, rgba(0,0,0,.28) 100%);
-    background-size:5px 5px, 100% 100%;}
+    background:radial-gradient(135% 105% at 50% -8%, #1e2e4c 0%, #152239 46%, #0f1a2e 100%);}
+  .paint::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity:.10;mix-blend-mode:overlay;}
+  .paint::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+    background:radial-gradient(72% 46% at 50% 0%, rgba(201,162,75,.16), transparent 70%), linear-gradient(180deg, transparent 60%, rgba(0,0,0,.22) 100%);}
   .paint > *{position:relative;z-index:2;}
 
   /* ===== highlight covers ===== */
   .covers{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;max-width:540px;margin:0 auto;}
   .cov{display:flex;flex-direction:column;align-items:center;gap:10px;}
   .cov .circ{width:100px;height:100px;border-radius:50%;border:1px solid var(--hair);display:flex;align-items:center;justify-content:center;
-    box-shadow:inset 0 2px 10px rgba(255,255,255,.14), inset 0 -8px 18px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.35);}
-  .cov .circ svg{width:42px;height:42px;stroke:var(--orange);fill:none;stroke-width:1.6;filter:drop-shadow(0 1px 2px rgba(0,0,0,.4));}
-  .cov .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-dim);}
+    box-shadow:inset 0 2px 10px rgba(255,255,255,.08), inset 0 -8px 18px rgba(0,0,0,.35), 0 6px 20px rgba(0,0,0,.35);}
+  .cov .circ svg{width:42px;height:42px;stroke:var(--brass);fill:none;stroke-width:1.6;}
+  .cov .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--beige-dim);}
 
   /* ===== story slides 9:16 ===== */
   .stories{display:flex;flex-direction:column;align-items:center;gap:30px;}
   .swrap{width:100%;max-width:340px;}
-  .snum{font-family:var(--mono);font-size:11px;color:var(--cream-faint);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;}
+  .snum{font-family:var(--mono);font-size:11px;color:var(--beige-faint);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;}
   .story{aspect-ratio:9/16;border-radius:22px;padding:40px 30px;display:flex;flex-direction:column;
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 10px 34px rgba(0,0,0,.4);}
-  .story .kick{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);}
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.10), 0 10px 34px rgba(0,0,0,.42);}
+  .story .kick{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);}
   .story .lock{margin-top:auto;display:flex;align-items:center;gap:9px;padding-top:20px;}
-  .story .lock .mm{width:32px;height:32px;border:2px solid var(--orange);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:16px;color:var(--orange);box-shadow:inset 0 1px 4px rgba(255,255,255,.2);}
-  .story .lock .h{font-family:var(--mono);font-size:11px;color:var(--cream-dim);letter-spacing:.08em;}
+  .story .lock .mm{width:32px;height:32px;border:2px solid var(--brass);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:16px;color:var(--brass);}
+  .story .lock .h{font-family:var(--mono);font-size:11px;color:var(--beige-dim);letter-spacing:.08em;}
 
   .h-xl{font-family:var(--disp);text-transform:uppercase;font-weight:700;line-height:.94;}
-  .story .big{font-size:44px;margin:16px 0 14px;color:var(--orange);text-shadow:0 2px 10px rgba(0,0,0,.35);}
-  .story .big em{color:var(--cream);font-style:normal;}
-  .story .sub{color:var(--cream);font-size:15px;line-height:1.5;}
+  .story .big{font-size:44px;margin:16px 0 14px;color:var(--beige);text-shadow:0 2px 10px rgba(0,0,0,.3);}
+  .story .big em{color:var(--brass);font-style:normal;}
+  .story .sub{color:var(--beige-dim);font-size:15px;line-height:1.5;}
 
   /* bring list */
   .brings{margin-top:20px;display:flex;flex-direction:column;gap:12px;}
   .bring{display:flex;gap:12px;align-items:flex-start;background:var(--glass);border:1px solid var(--hair);border-radius:10px;padding:11px 13px;}
-  .bring .bi{width:30px;height:30px;border:1px solid rgba(255,255,255,.22);border-radius:7px;background:var(--glass-2);display:flex;align-items:center;justify-content:center;flex:none;}
-  .bring .bi svg{width:16px;height:16px;stroke:var(--orange);fill:none;stroke-width:1.9;}
-  .bring .bt-h{font-family:var(--disp);text-transform:uppercase;font-weight:600;font-size:16px;line-height:1;margin-bottom:3px;color:var(--cream);}
-  .bring .bt-d{font-size:12px;color:var(--cream-dim);line-height:1.35;}
+  .bring .bi{width:30px;height:30px;border:1px solid rgba(201,162,75,.4);border-radius:7px;background:rgba(201,162,75,.08);display:flex;align-items:center;justify-content:center;flex:none;}
+  .bring .bi svg{width:16px;height:16px;stroke:var(--brass);fill:none;stroke-width:1.9;}
+  .bring .bt-h{font-family:var(--disp);text-transform:uppercase;font-weight:600;font-size:16px;line-height:1;margin-bottom:3px;color:var(--beige);}
+  .bring .bt-d{font-size:12px;color:var(--beige-dim);line-height:1.35;}
 
   /* steps */
   .steps{margin-top:22px;display:flex;flex-direction:column;gap:16px;}
   .stp{display:flex;gap:14px;align-items:flex-start;}
-  .stp .sn{font-family:var(--disp);font-weight:700;font-size:32px;color:var(--orange);line-height:.9;width:32px;flex:none;text-shadow:0 2px 6px rgba(0,0,0,.3);}
-  .stp .sh{font-family:var(--disp);text-transform:uppercase;font-weight:600;font-size:17px;margin-bottom:2px;color:var(--cream);}
-  .stp .sd{font-size:12.5px;color:var(--cream-dim);line-height:1.4;}
+  .stp .sn{font-family:var(--disp);font-weight:700;font-size:32px;color:var(--brass);line-height:.9;width:32px;flex:none;}
+  .stp .sh{font-family:var(--disp);text-transform:uppercase;font-weight:600;font-size:17px;margin-bottom:2px;color:var(--beige);}
+  .stp .sd{font-size:12.5px;color:var(--beige-dim);line-height:1.4;}
 
   /* trades chips */
   .tchips{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px;}
-  .tchip{font-family:var(--mono);font-size:12px;color:var(--cream);border:1px solid var(--hair);background:var(--glass);border-radius:20px;padding:7px 13px;letter-spacing:.02em;}
-  .tchip.more{color:var(--orange);border-color:var(--orange);}
+  .tchip{font-family:var(--mono);font-size:12px;color:var(--beige);border:1px solid var(--hair);background:var(--glass);border-radius:20px;padding:7px 13px;letter-spacing:.02em;}
+  .tchip.more{color:var(--brass);border-color:var(--brass);}
 
   /* connect */
   .story.connect{justify-content:center;text-align:center;align-items:center;}
   .story.connect .big{font-size:40px;}
-  .story.connect .kw{display:inline-block;font-family:var(--mono);font-weight:600;background:var(--orange);color:#2a0f04;padding:5px 15px;border-radius:6px;margin:18px 0;font-size:18px;letter-spacing:.05em;box-shadow:0 4px 14px rgba(232,94,39,.4);}
-  .story.connect .contact{font-family:var(--mono);font-size:13px;color:var(--cream);line-height:1.9;}
+  .story.connect .kw{display:inline-block;font-family:var(--mono);font-weight:600;background:var(--brass);color:var(--navy-deep);padding:5px 15px;border-radius:6px;margin:18px 0;font-size:18px;letter-spacing:.05em;box-shadow:0 4px 14px rgba(201,162,75,.35);}
+  .story.connect .contact{font-family:var(--mono);font-size:13px;color:var(--beige);line-height:1.9;}
   .story.connect .lock{justify-content:center;}
 </style>
 </head>
 <body>
   <div class="phead">
-    <h1>Highlights + Stories · Isle of Man Green</h1>
-    <p>Metallic green paint + Kyalami orange — matched to your BMW.<br />Screenshot each → post to Story → save to the matching Highlight.</p>
+    <h1>Highlights + Stories · Navy &amp; Beige</h1>
+    <p>Navy + brass, fine grain + glow — the locked look.<br />Screenshot each → post to Story → save to the matching Highlight.</p>
   </div>
 
   <!-- HIGHLIGHT COVERS -->
@@ -114,7 +107,6 @@
   <div class="divider"><span class="t">Story graphics · 9:16</span><span class="l"></span></div>
   <div class="stories">
 
-    <!-- 1 · WHAT I DO -->
     <div class="swrap">
       <div class="snum">Story 1 · "What I Do" highlight</div>
       <div class="story paint">
@@ -125,7 +117,6 @@
       </div>
     </div>
 
-    <!-- 2 · WHAT I BRING -->
     <div class="swrap">
       <div class="snum">Story 2 · "What I Bring" highlight</div>
       <div class="story paint">
@@ -141,7 +132,6 @@
       </div>
     </div>
 
-    <!-- 3 · HOW IT WORKS -->
     <div class="swrap">
       <div class="snum">Story 3 · "Process" highlight</div>
       <div class="story paint">
@@ -156,7 +146,6 @@
       </div>
     </div>
 
-    <!-- 4 · WHO I BUILD FOR -->
     <div class="swrap">
       <div class="snum">Story 4 · "What I Do" highlight (2nd slide)</div>
       <div class="story paint">
@@ -172,7 +161,6 @@
       </div>
     </div>
 
-    <!-- 5 · LET'S CONNECT -->
     <div class="swrap">
       <div class="snum">Story 5 · pin to any highlight (the CTA)</div>
       <div class="story paint connect">
