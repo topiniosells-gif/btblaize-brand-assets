@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Carousel — 5 Things Every Contractor Website Needs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ground:#0b0c0e; --ground-2:#121418; --ground-3:#181b20;
+    --line:#262a31; --ink:#f4f2ee; --ink-dim:#a6abb3; --ink-faint:#71767e;
+    --amber:#eb9a3c; --amber-hi:#ffb35a; --ember:#c9631b; --steel:#6ba3d6;
+    --disp:"Barlow Condensed","Arial Narrow",sans-serif;
+    --body:"Barlow",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#050506;font-family:var(--body);color:var(--ink);padding:30px 16px 80px;-webkit-font-smoothing:antialiased;}
+  .page-head{max-width:420px;margin:0 auto 26px;text-align:center;}
+  .page-head h1{font-family:var(--disp);text-transform:uppercase;font-size:22px;color:var(--amber);letter-spacing:.02em;}
+  .page-head p{font-family:var(--mono);font-size:12px;color:var(--ink-faint);margin-top:8px;line-height:1.5;}
+  .deck{display:flex;flex-direction:column;align-items:center;gap:30px;}
+  .slide-wrap{width:100%;max-width:420px;}
+  .slide-num{font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;text-align:left;}
+  .slide{aspect-ratio:4/5;border-radius:18px;overflow:hidden;position:relative;
+    background:radial-gradient(circle at 50% 26%,#171b22,var(--ground));border:1px solid var(--line);
+    padding:38px 34px;display:flex;flex-direction:column;}
+  .slide::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+    background-size:38px 38px;-webkit-mask-image:radial-gradient(circle at 50% 20%,#000,transparent 72%);mask-image:radial-gradient(circle at 50% 20%,#000,transparent 72%);}
+  .slide > *{position:relative;z-index:1;}
+  .kick{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);}
+  .lockup{margin-top:auto;display:flex;align-items:center;gap:9px;}
+  .lockup .mm{width:30px;height:30px;border:1.6px solid var(--amber);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:15px;color:var(--amber);}
+  .lockup .h{font-family:var(--mono);font-size:12px;color:var(--ink-dim);letter-spacing:.08em;}
+
+  /* cover slide */
+  .cover-slide{justify-content:center;text-align:left;}
+  .cover-slide .big{font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:52px;line-height:.92;margin:16px 0 14px;}
+  .cover-slide .big em{color:var(--amber);font-style:normal;}
+  .cover-slide .sub{color:var(--ink-dim);font-size:17px;line-height:1.45;}
+  .cover-slide .lockup{margin-top:34px;}
+  .swipe{position:absolute;bottom:34px;right:34px;font-family:var(--mono);font-size:12px;color:var(--amber);letter-spacing:.1em;}
+
+  /* numbered content slide */
+  .n-badge{font-family:var(--disp);font-weight:700;font-size:80px;line-height:.8;color:var(--amber);opacity:.95;}
+  .slide h2{font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:36px;line-height:.98;margin:14px 0 14px;}
+  .slide .body{color:var(--ink-dim);font-size:17px;line-height:1.5;}
+  .slide .body b{color:var(--ink);}
+  .slide .tagline{font-family:var(--mono);font-size:12px;color:var(--steel);letter-spacing:.04em;margin-top:16px;}
+
+  /* cta slide */
+  .cta-slide{justify-content:center;text-align:center;align-items:center;}
+  .cta-slide .big{font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:42px;line-height:.96;margin-bottom:16px;}
+  .cta-slide .big em{color:var(--amber);font-style:normal;}
+  .cta-slide .sub{color:var(--ink-dim);font-size:17px;line-height:1.5;max-width:30ch;}
+  .cta-slide .kw{display:inline-block;font-family:var(--mono);font-weight:600;background:#170d02;color:var(--amber);padding:3px 12px;border-radius:5px;margin:20px 0;font-size:18px;letter-spacing:.05em;}
+  .cta-slide .lockup{margin-top:24px;justify-content:center;}
+</style>
+</head>
+<body>
+  <div class="page-head">
+    <h1>Carousel · 5 Things Every Contractor Website Needs</h1>
+    <p>Screenshot each slide (crop to the card) → post as an IG/FB carousel.<br />Or feed the copy to Nano Banana / Canva. 4:5 ratio, ready to go.</p>
+  </div>
+
+  <div class="deck">
+
+    <!-- SLIDE 1 — COVER -->
+    <div class="slide-wrap">
+      <div class="slide-num">Slide 1 / 7 · Cover</div>
+      <div class="slide cover-slide">
+        <span class="kick">// For Contractors</span>
+        <div class="big">5 things every <em>contractor site</em> needs</div>
+        <div class="sub">Most contractors are missing at least 3 of them — and losing jobs they never hear about.</div>
+        <div class="lockup"><div class="mm">BT</div><span class="h">@btblaize</span></div>
+        <span class="swipe">swipe →</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slide-wrap">
+      <div class="slide-num">Slide 2 / 7</div>
+      <div class="slide">
+        <span class="kick">// #1</span>
+        <div class="n-badge">01</div>
+        <h2>One-tap<br />call button</h2>
+        <div class="body">Most homeowners want to <b>call, not fill out a form.</b> Your number should be one tap at the top of every page — not buried on a contact page.</div>
+        <div class="tagline">// buried number = missed call = the next guy</div>
+        <div class="lockup"><div class="mm">BT</div><span class="h">@btblaize</span></div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="slide-wrap">
+      <div class="slide-num">Slide 3 / 7</div>
+      <div class="slide">
+        <span class="kick">// #2</span>
+        <div class="n-badge">02</div>
+        <h2>A form that<br />texts you back</h2>
+        <div class="body">A lead fills out your form at 9pm. If nothing happens till morning, they've already called someone else. It should <b>text them back instantly</b> — automatically.</div>
+        <div class="tagline">// speed to lead wins the job</div>
+        <div class="lockup"><div class="mm">BT</div><span class="h">@btblaize</span></div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4 -->
+    <div class="slide-wrap">
+      <div class="slide-num">Slide 4 / 7</div>
+      <div class="slide">
+        <span class="kick">// #3</span>
+        <div class="n-badge">03</div>
+        <h2>Real proof</h2>
+        <div class="body">Real photos of <b>your</b> work, real reviews, before/afters. Stock photos and empty pages make homeowners doubt you. Proof is what makes them trust you enough to call.</div>
+        <div class="tagline">// look as legit as you actually are</div>
+        <div class="lockup"><div class="mm">BT</div><span class="h">@btblaize</span></div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5 -->
+    <div class="slide-wrap">
+      <div class="slide-num">Slide 5 / 7</div>
+      <div class="slide">
+        <span class="kick">// #4</span>
+        <div class="n-badge">04</div>
+        <h2>Fast + built<br />for the phone</h2>
+        <div class="body">8 out of 10 homeowners find you <b>on their phone.</b> If it loads slow or looks broken on mobile, they're gone in 3 seconds — and Google buries you too.</div>
+        <div class="tagline">// slow site = invisible site</div>
+        <div class="lockup"><div class="mm">BT</div><span class="h">@btblaize</span></div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6 -->
+    <div class="slide-wrap">
+      <div class="slide-num">Slide 6 / 7</div>
+      <div class="slide">
+        <span class="kick">// #5</span>
+        <div class="n-badge">05</div>
+        <h2>Shows up<br />on Google</h2>
+        <div class="body">When someone searches "<b>[your trade] near me</b>," you need to be there — with your service areas and towns on the page. A site nobody can find is a business card in a drawer.</div>
+        <div class="tagline">// get found the moment they're looking</div>
+        <div class="lockup"><div class="mm">BT</div><span class="h">@btblaize</span></div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7 — CTA -->
+    <div class="slide-wrap">
+      <div class="slide-num">Slide 7 / 7 · CTA</div>
+      <div class="slide cta-slide">
+        <span class="kick">// Your move</span>
+        <div class="big">Missing a<br />few of these?</div>
+        <div class="sub">I build contractors a site with all 5 — plus the system behind it. See yours first, free.</div>
+        <div class="kw">Comment “SITE”</div>
+        <div class="lockup"><div class="mm">BT</div><span class="h">@btblaize · Blaize Topinio</span></div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
