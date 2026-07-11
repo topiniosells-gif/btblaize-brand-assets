@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Color & Logo Direction — @btblaize</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* Palette A — Emerald + Ember (recommended) */
+    --ground:#0a0d0b; --ground-2:#10140f; --ground-3:#161b14; --line:#242c1f; --line-soft:#1a2016;
+    --ink:#f1f3ef; --ink-dim:#a6ad9f; --ink-faint:#6f7568; --soft:#c8cfbf;
+    --green:#18a559; --green-hi:#26c46e; --green-deep:#0e5132;
+    --orange:#ff6a2c; --orange-hi:#ff8850;
+    --disp:"Barlow Condensed","Arial Narrow",sans-serif;
+    --body:"Barlow",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
+    --wrap:900px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);
+    background-size:44px 44px;opacity:.16;-webkit-mask-image:radial-gradient(circle at 50% 8%,#000,transparent 68%);mask-image:radial-gradient(circle at 50% 8%,#000,transparent 68%);}
+  .wrap{position:relative;z-index:1;max-width:var(--wrap);margin:0 auto;padding:0 24px;}
+  h1,h2,h3{font-family:var(--disp);text-transform:uppercase;margin:0;line-height:.95;letter-spacing:.01em;}
+  p{margin:0;}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);}
+  .muted{color:var(--ink-dim);}
+
+  section{padding:52px 0;border-top:1px solid var(--line);}
+  .sec-tag{display:flex;align-items:center;gap:14px;margin-bottom:24px;}
+  .sec-tag .n{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--ink-faint);text-transform:uppercase;white-space:nowrap;}
+  .sec-tag .n b{color:var(--green);}
+  .sec-tag .l{height:1px;background:var(--line);flex:1;}
+  h2{font-size:clamp(26px,5vw,38px);font-weight:700;margin-bottom:10px;}
+  .sec-intro{color:var(--ink-dim);max-width:60ch;margin-bottom:26px;}
+
+  .cover{padding:64px 0 40px;border-top:0;}
+  .cover .mm{width:58px;height:58px;border:2px solid var(--green);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:27px;color:var(--green);margin-bottom:22px;box-shadow:0 0 36px -10px rgba(24,165,89,.55);}
+  .cover h1{font-size:clamp(40px,8vw,64px);font-weight:700;margin-bottom:12px;}
+  .cover h1 .g{color:var(--green);} .cover h1 .o{color:var(--orange);}
+  .cover .lead{color:var(--ink-dim);font-size:clamp(17px,3vw,20px);max-width:52ch;}
+
+  /* palette cards */
+  .palettes{display:grid;grid-template-columns:1fr;gap:20px;}
+  @media(min-width:720px){.palettes{grid-template-columns:1fr 1fr;}}
+  .pal{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--ground-2);}
+  .pal.rec{border-color:var(--green);}
+  .pal .ph{padding:16px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);}
+  .pal .ph .pt{font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:20px;}
+  .pal .ph .rec-b{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);border:1px solid var(--green);border-radius:20px;padding:3px 9px;}
+  .pal .swatches{display:flex;height:80px;}
+  .pal .sw{flex:1;}
+  .pal .body{padding:16px 18px;}
+  .pal .vibe{font-size:14px;color:var(--ink-dim);margin-bottom:12px;}
+  .pal .hexes{display:flex;flex-wrap:wrap;gap:6px;}
+  .pal .hex{font-family:var(--mono);font-size:11px;color:var(--soft);border:1px solid var(--line);border-radius:5px;padding:3px 7px;}
+
+  /* rule */
+  .rule-cards{display:grid;grid-template-columns:1fr;gap:12px;}
+  @media(min-width:720px){.rule-cards{grid-template-columns:repeat(3,1fr);}}
+  .rc{background:var(--ground-2);border:1px solid var(--line);border-radius:10px;padding:18px;}
+  .rc .rh{font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:17px;margin-bottom:6px;}
+  .rc.g .rh{color:var(--green);} .rc.o .rh{color:var(--orange);} .rc.d .rh{color:var(--ink);}
+  .rc p{font-size:13.5px;color:var(--ink-dim);}
+
+  /* logos */
+  .logos{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(min-width:720px){.logos{grid-template-columns:repeat(3,1fr);}}
+  .logo{border:1px solid var(--line);border-radius:12px;padding:30px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:150px;background:var(--ground-2);}
+  .logo.light{background:var(--ink);}
+  .logo .cap{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-top:6px;}
+  .logo.light .cap{color:#8a8f82;}
+  .mono-out{width:60px;height:60px;border:2.5px solid var(--green);border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:28px;color:var(--green);}
+  .mono-fill{width:60px;height:60px;background:var(--green);border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:28px;color:#08150d;}
+  .mono-tick{width:60px;height:60px;border:2.5px solid var(--green);border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:28px;color:var(--green);position:relative;}
+  .mono-tick::after{content:"";position:absolute;top:-8px;right:-8px;width:18px;height:18px;background:var(--orange);border-radius:50%;border:3px solid var(--ground-2);}
+  .logo.light .mono-tick::after{border-color:var(--ink);}
+  .wordmark{font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:26px;color:var(--ink);letter-spacing:.02em;}
+  .wordmark .dot{color:var(--orange);}
+  .logo.light .wordmark{color:#08150d;}
+  .handle{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--green);}
+
+  /* bmw greens */
+  .greens{display:flex;flex-wrap:wrap;gap:14px;}
+  .grn{border:1px solid var(--line);border-radius:9px;overflow:hidden;width:150px;}
+  .grn .chip{height:60px;}
+  .grn .gm{padding:10px 12px;background:var(--ground-2);}
+  .grn .gn{font-weight:600;font-size:13px;}
+  .grn .gh{font-family:var(--mono);font-size:11px;color:var(--ink-dim);margin-top:2px;}
+  .grn .gv{font-size:11px;color:var(--ink-faint);margin-top:4px;}
+
+  /* apps */
+  .apps{display:grid;grid-template-columns:1fr;gap:10px;}
+  @media(min-width:720px){.apps{grid-template-columns:1fr 1fr;}}
+  .app{display:flex;gap:12px;background:var(--ground-2);border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-size:14px;}
+  .app .an{font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:16px;color:var(--green);min-width:120px;}
+  .app .ad{color:var(--ink-dim);font-size:13px;}
+
+  footer{border-top:1px solid var(--line);padding:32px 0 60px;text-align:center;}
+  footer .fm{font-family:var(--mono);font-size:12px;color:var(--ink-faint);letter-spacing:.05em;}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+</style>
+</head>
+<body>
+  <header class="cover wrap">
+    <div class="mm">BT</div>
+    <span class="eyebrow">Brand Direction · React &amp; Refine</span>
+    <h1><span class="g">Green</span> meets <span class="o">orange.</span></h1>
+    <p class="lead">Two palette options and a few logo concepts in your new colors. Pick a direction and I'll reskin your whole kit — highlights, graphics, and site — to match.</p>
+  </header>
+
+  <!-- PALETTES -->
+  <section class="wrap">
+    <div class="sec-tag"><span class="n"><b>01</b> // The Palette</span><span class="l"></span></div>
+    <h2>Two ways to run green + orange</h2>
+    <p class="sec-intro">Both keep green dominant, orange as the accent, on a dark green-tinted black. Difference is how loud the green is.</p>
+    <div class="palettes">
+      <div class="pal rec">
+        <div class="ph"><span class="pt">A · Emerald + Ember</span><span class="rec-b">My pick</span></div>
+        <div class="swatches"><div class="sw" style="background:#0a0d0b"></div><div class="sw" style="background:#0e5132"></div><div class="sw" style="background:#18a559"></div><div class="sw" style="background:#ff6a2c"></div><div class="sw" style="background:#f1f3ef"></div></div>
+        <div class="body">
+          <div class="vibe">Vibrant emerald (Isle-of-Man vibe) + burnt orange. Premium but energetic — reads "sharp operator," not loud.</div>
+          <div class="hexes"><span class="hex">#0A0D0B ground</span><span class="hex">#18A559 green</span><span class="hex">#0E5132 deep</span><span class="hex">#FF6A2C orange</span><span class="hex">#F1F3EF ink</span></div>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="ph"><span class="pt">B · Racing</span></div>
+        <div class="swatches"><div class="sw" style="background:#080a09"></div><div class="sw" style="background:#0b3d26"></div><div class="sw" style="background:#12894a"></div><div class="sw" style="background:#ff7a1a"></div><div class="sw" style="background:#eef1ea"></div></div>
+        <div class="body">
+          <div class="vibe">Deeper British-racing green + brighter orange. More understated/luxe, a touch more classic-automotive.</div>
+          <div class="hexes"><span class="hex">#080A09 ground</span><span class="hex">#12894A green</span><span class="hex">#0B3D26 deep</span><span class="hex">#FF7A1A orange</span><span class="hex">#EEF1EA ink</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE RULE -->
+  <section class="wrap">
+    <div class="sec-tag"><span class="n"><b>02</b> // The Rule That Keeps It Premium</span><span class="l"></span></div>
+    <h2>Green leads. Orange pops. Dark grounds it.</h2>
+    <div class="rule-cards">
+      <div class="rc g"><div class="rh">Green = the brand</div><p>Headlines, the logo, the main accents. It's the color people associate with you. Growth + money.</p></div>
+      <div class="rc o"><div class="rh">Orange = one pop</div><p>ONE orange thing per graphic — a button, a keyword, the CTA. Restraint is what makes it look designed, not Halloween.</p></div>
+      <div class="rc d"><div class="rh">Dark = the ground</div><p>Near-black with a faint green tint. Lets both colors glow and keeps the whole thing premium.</p></div>
+    </div>
+  </section>
+
+  <!-- LOGOS -->
+  <section class="wrap">
+    <div class="sec-tag"><span class="n"><b>03</b> // Logo Concepts</span><span class="l"></span></div>
+    <h2>A few directions for the mark</h2>
+    <p class="sec-intro">All clean + typographic (no clip-art). The "BT" monogram is your profile-pic + highlight icon; the wordmark is for headers and your site. Pick one and I'll finalize it (or generate a polished version in Nano Banana).</p>
+    <div class="logos">
+      <div class="logo"><div class="mono-out">BT</div><div class="cap">Monogram · outline</div></div>
+      <div class="logo"><div class="mono-fill">BT</div><div class="cap">Monogram · solid green</div></div>
+      <div class="logo"><div class="mono-tick">BT</div><div class="cap">Monogram · orange dot accent</div></div>
+      <div class="logo"><div class="wordmark">Blaize Topinio<span class="dot">.</span></div><div class="handle">@BTBLAIZE</div><div class="cap">Wordmark · dark</div></div>
+      <div class="logo light"><div class="wordmark">Blaize Topinio<span class="dot">.</span></div><div class="cap">Wordmark · light bg</div></div>
+      <div class="logo light"><div class="mono-fill">BT</div><div class="cap">Monogram on light</div></div>
+    </div>
+  </section>
+
+  <!-- BMW GREENS -->
+  <section class="wrap">
+    <div class="sec-tag"><span class="n"><b>04</b> // Which BMW Green Did You Mean?</span><span class="l"></span></div>
+    <h2>Point me at the one you love</h2>
+    <p class="sec-intro">Tap the vibe that matches the car in your head — I'll tune the green to it exactly.</p>
+    <div class="greens">
+      <div class="grn"><div class="chip" style="background:#47554b"></div><div class="gm"><div class="gn">San Remo Green</div><div class="gh">#47554B</div><div class="gv">Muted, grey-emerald, understated luxe</div></div></div>
+      <div class="grn"><div class="chip" style="background:#1c4634"></div><div class="gm"><div class="gn">Isle of Man Green</div><div class="gh">#1C4634</div><div class="gv">Deep metallic racing emerald</div></div></div>
+      <div class="grn"><div class="chip" style="background:#00a651"></div><div class="gm"><div class="gn">Signal Green</div><div class="gh">#00A651</div><div class="gv">Bright, loud, sporty grass green</div></div></div>
+      <div class="grn"><div class="chip" style="background:#7bb661"></div><div class="gm"><div class="gn">Java / Lime</div><div class="gh">#7BB661</div><div class="gv">Chartreuse, high-energy, youthful</div></div></div>
+    </div>
+  </section>
+
+  <!-- APPS -->
+  <section class="wrap">
+    <div class="sec-tag"><span class="n"><b>05</b> // If You Want To DIY The Logo</span><span class="l"></span></div>
+    <h2>Apps that do logos</h2>
+    <p class="sec-intro">Honestly you don't need one — I can finalize the mark for you free. But if you want to play with it:</p>
+    <div class="apps">
+      <div class="app"><span class="an">Canva</span><span class="ad">Free, easy, tons of templates + your exact hex codes. Best all-rounder.</span></div>
+      <div class="app"><span class="an">Adobe Express</span><span class="ad">Free logo maker, clean output, easy color control.</span></div>
+      <div class="app"><span class="an">Looka</span><span class="ad">AI logo generator — great options, but you pay to download the files.</span></div>
+      <div class="app"><span class="an">Hatchful</span><span class="ad">Free, fast, by Shopify. Good for a quick first mark.</span></div>
+      <div class="app"><span class="an">Nano Banana</span><span class="ad">Once you're set up — I already wrote you a logo prompt in your guide.</span></div>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <div class="fm">Blaize Topinio · @btblaize · Brand Direction v1 · pick a palette + a logo, then I reskin everything</div>
+  </footer>
+</body>
+</html>
