@@ -3,34 +3,24 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Profile Pic — @btblaize</title>
+<title>Profile Pic — BT Marketing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
 <style>
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{background:#0a1120;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:30px 16px;font-family:"JetBrains Mono",monospace;}
-  .hint{color:#8b93a2;font-size:12px;letter-spacing:.06em;text-align:center;line-height:1.6;max-width:360px;}
-  .hint b{color:#c9a24b;}
-  /* the avatar — screenshot this square */
-  .pic{width:340px;height:340px;border-radius:50%;position:relative;overflow:hidden;
-    background:radial-gradient(120% 120% at 50% 8%, #223760 0%, #152239 48%, #0d162a 100%);
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 20px 60px rgba(0,0,0,.5);}
-  /* grain */
-  .pic::before{content:"";position:absolute;inset:0;pointer-events:none;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.11;mix-blend-mode:overlay;}
-  /* glow */
-  .pic::after{content:"";position:absolute;inset:0;pointer-events:none;
-    background:radial-gradient(60% 42% at 50% 6%, rgba(201,162,75,.22), transparent 68%);}
-  .ring{position:absolute;inset:20px;border-radius:50%;border:2px solid rgba(201,162,75,.4);z-index:2;}
-  .bt{position:relative;z-index:3;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:150px;letter-spacing:6px;color:#c9a24b;line-height:1;text-shadow:0 3px 14px rgba(0,0,0,.4);}
-  .note{color:#c3bcab;font-size:11px;}
+  body{background:#0a1120;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:30px 16px;font-family:"JetBrains Mono",monospace;}
+  .hint{color:#8b93a2;font-size:12px;letter-spacing:.06em;text-align:center;line-height:1.7;max-width:360px;}
+  .hint b{color:#c6a273;}
+  .pic{width:320px;height:320px;border-radius:50%;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.55);border:1px solid rgba(198,162,115,.25);}
+  .pic img{width:100%;height:100%;object-fit:cover;display:block;}
+  .dl{color:#c6a273;font-size:12px;letter-spacing:.06em;text-decoration:none;border:1px solid rgba(198,162,115,.4);padding:9px 16px;border-radius:6px;}
+  .dl:hover{background:rgba(198,162,115,.1);}
 </style>
 </head>
 <body>
-  <p class="hint">Your profile picture. <b>Screenshot the circle</b> (or the square around it) → Instagram → Change photo. It's already circle-cropped-safe.</p>
-  <div class="pic"><div class="ring"></div><div class="bt">BT</div></div>
-  <p class="note">navy · brass · grain + glow</p>
+  <p class="hint">Your profile picture — your real BT Marketing mark on navy.<br /><b>Screenshot the circle</b> (or download below) → Instagram → Change photo.</p>
+  <div class="pic"><img src="profile-pic.png" alt="BT Marketing profile picture" /></div>
+  <a class="dl" href="profile-pic.png" download>Download the file</a>
 </body>
 </html>
