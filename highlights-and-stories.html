@@ -3,94 +3,95 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Highlights + Story Graphics — @btblaize (Navy & Beige)</title>
+<title>Highlights + Story Graphics — BT Marketing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --navy-deep:#0f1a2e; --navy:#152239; --navy-2:#1b2b47;
-    --brass:#c9a24b; --brass-hi:#e0bd6c;
-    --beige:#e9e2d2; --beige-dim:#c3bcab; --beige-faint:#8b93a2;
-    --glass:rgba(255,255,255,.05); --glass-2:rgba(15,26,46,.55); --hair:rgba(233,226,210,.15);
-    --disp:"Barlow Condensed","Arial Narrow",sans-serif;
-    --body:"Barlow",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
+    /* matched to the BT Marketing logo board */
+    --navy:#16233b; --navy-2:#1e2f4c; --navy-deep:#0f1828;
+    --gold:#c6a273; --gold-hi:#dcc196; --gold-deep:#a5824f;
+    --cream:#efe9db; --cream-dim:#bdb8ab; --cream-faint:#87909f;
+    --hair:rgba(198,162,115,.34); --glass:rgba(255,255,255,.035);
+    --sans:"Montserrat",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{background:#0a1120;font-family:var(--body);color:var(--beige);padding:30px 16px 80px;-webkit-font-smoothing:antialiased;}
+  body{background:#0c1524;font-family:var(--sans);color:var(--cream);padding:30px 16px 80px;-webkit-font-smoothing:antialiased;}
   .phead{max-width:480px;margin:0 auto 20px;text-align:center;}
-  .phead h1{font-family:var(--disp);text-transform:uppercase;font-size:22px;color:var(--brass);letter-spacing:.02em;}
-  .phead p{font-family:var(--mono);font-size:12px;color:var(--beige-faint);margin-top:8px;line-height:1.5;}
-  .divider{max-width:480px;margin:44px auto 22px;display:flex;align-items:center;gap:12px;}
-  .divider .t{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);white-space:nowrap;}
-  .divider .l{height:1px;background:rgba(233,226,210,.12);flex:1;}
+  .phead h1{font-weight:600;font-size:18px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+  .phead p{font-family:var(--mono);font-size:12px;color:var(--cream-faint);margin-top:8px;line-height:1.5;}
+  .divider{max-width:480px;margin:44px auto 22px;display:flex;align-items:center;gap:14px;}
+  .divider .t{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);white-space:nowrap;font-weight:500;}
+  .divider .l{height:1px;background:var(--hair);flex:1;}
 
-  /* ===== navy surface: grain + glow ===== */
+  /* ===== navy surface: subtle grain + soft glow ===== */
   .paint{position:relative;overflow:hidden;
-    background:radial-gradient(135% 105% at 50% -8%, #1e2e4c 0%, #152239 46%, #0f1a2e 100%);}
+    background:radial-gradient(130% 100% at 50% 0%, #1c2d49 0%, #16233b 50%, #0f1828 100%);}
   .paint::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    opacity:.10;mix-blend-mode:overlay;}
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.06;mix-blend-mode:overlay;}
   .paint::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
-    background:radial-gradient(72% 46% at 50% 0%, rgba(201,162,75,.16), transparent 70%), linear-gradient(180deg, transparent 60%, rgba(0,0,0,.22) 100%);}
+    background:radial-gradient(70% 45% at 50% 0%, rgba(198,162,115,.12), transparent 70%);}
   .paint > *{position:relative;z-index:2;}
+
+  /* the mark (placeholder until real icon PNG is dropped in) */
+  .mark{width:34px;height:34px;border:1.5px solid var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--gold);flex:none;}
 
   /* ===== highlight covers ===== */
   .covers{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;max-width:540px;margin:0 auto;}
-  .cov{display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .cov{display:flex;flex-direction:column;align-items:center;gap:11px;}
   .cov .circ{width:100px;height:100px;border-radius:50%;border:1px solid var(--hair);display:flex;align-items:center;justify-content:center;
-    box-shadow:inset 0 2px 10px rgba(255,255,255,.08), inset 0 -8px 18px rgba(0,0,0,.35), 0 6px 20px rgba(0,0,0,.35);}
-  .cov .circ svg{width:42px;height:42px;stroke:var(--brass);fill:none;stroke-width:1.6;}
-  .cov .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--beige-dim);}
+    box-shadow:inset 0 1px 8px rgba(255,255,255,.06), 0 6px 20px rgba(0,0,0,.4);}
+  .cov .circ svg{width:40px;height:40px;stroke:var(--gold);fill:none;stroke-width:1.4;}
+  .cov .lbl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-dim);font-weight:500;}
 
   /* ===== story slides 9:16 ===== */
   .stories{display:flex;flex-direction:column;align-items:center;gap:30px;}
   .swrap{width:100%;max-width:340px;}
-  .snum{font-family:var(--mono);font-size:11px;color:var(--beige-faint);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;}
-  .story{aspect-ratio:9/16;border-radius:22px;padding:40px 30px;display:flex;flex-direction:column;
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.10), 0 10px 34px rgba(0,0,0,.42);}
-  .story .kick{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);}
-  .story .lock{margin-top:auto;display:flex;align-items:center;gap:9px;padding-top:20px;}
-  .story .lock .mm{width:32px;height:32px;border:2px solid var(--brass);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:16px;color:var(--brass);}
-  .story .lock .h{font-family:var(--mono);font-size:11px;color:var(--beige-dim);letter-spacing:.08em;}
+  .snum{font-family:var(--mono);font-size:11px;color:var(--cream-faint);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;}
+  .story{aspect-ratio:9/16;border-radius:20px;padding:42px 32px;display:flex;flex-direction:column;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.06), 0 10px 34px rgba(0,0,0,.45);}
+  .story .kick{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500;}
+  .story .hrule{width:44px;height:1px;background:var(--gold);margin:14px 0 4px;opacity:.7;}
+  .story .lock{margin-top:auto;display:flex;align-items:center;gap:10px;padding-top:22px;border-top:1px solid var(--hair);}
+  .story .lock .h{font-size:10.5px;color:var(--cream-dim);letter-spacing:.14em;text-transform:uppercase;font-weight:500;}
 
-  .h-xl{font-family:var(--disp);text-transform:uppercase;font-weight:700;line-height:.94;}
-  .story .big{font-size:44px;margin:16px 0 14px;color:var(--beige);text-shadow:0 2px 10px rgba(0,0,0,.3);}
-  .story .big em{color:var(--brass);font-style:normal;}
-  .story .sub{color:var(--beige-dim);font-size:15px;line-height:1.5;}
+  .story .big{font-weight:700;font-size:33px;line-height:1.08;letter-spacing:-.01em;margin:14px 0 14px;color:var(--cream);}
+  .story .big em{color:var(--gold);font-style:normal;}
+  .story .sub{color:var(--cream-dim);font-size:14.5px;line-height:1.55;font-weight:400;}
 
   /* bring list */
   .brings{margin-top:20px;display:flex;flex-direction:column;gap:12px;}
-  .bring{display:flex;gap:12px;align-items:flex-start;background:var(--glass);border:1px solid var(--hair);border-radius:10px;padding:11px 13px;}
-  .bring .bi{width:30px;height:30px;border:1px solid rgba(201,162,75,.4);border-radius:7px;background:rgba(201,162,75,.08);display:flex;align-items:center;justify-content:center;flex:none;}
-  .bring .bi svg{width:16px;height:16px;stroke:var(--brass);fill:none;stroke-width:1.9;}
-  .bring .bt-h{font-family:var(--disp);text-transform:uppercase;font-weight:600;font-size:16px;line-height:1;margin-bottom:3px;color:var(--beige);}
-  .bring .bt-d{font-size:12px;color:var(--beige-dim);line-height:1.35;}
+  .bring{display:flex;gap:12px;align-items:flex-start;}
+  .bring .bi{width:30px;height:30px;border:1px solid var(--hair);border-radius:8px;display:flex;align-items:center;justify-content:center;flex:none;}
+  .bring .bi svg{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:1.7;}
+  .bring .bt-h{font-weight:600;font-size:14px;line-height:1.2;margin-bottom:3px;color:var(--cream);letter-spacing:.01em;}
+  .bring .bt-d{font-size:11.5px;color:var(--cream-dim);line-height:1.4;font-weight:400;}
 
   /* steps */
-  .steps{margin-top:22px;display:flex;flex-direction:column;gap:16px;}
-  .stp{display:flex;gap:14px;align-items:flex-start;}
-  .stp .sn{font-family:var(--disp);font-weight:700;font-size:32px;color:var(--brass);line-height:.9;width:32px;flex:none;}
-  .stp .sh{font-family:var(--disp);text-transform:uppercase;font-weight:600;font-size:17px;margin-bottom:2px;color:var(--beige);}
-  .stp .sd{font-size:12.5px;color:var(--beige-dim);line-height:1.4;}
+  .steps{margin-top:24px;display:flex;flex-direction:column;gap:18px;}
+  .stp{display:flex;gap:16px;align-items:flex-start;}
+  .stp .sn{font-weight:700;font-size:26px;color:var(--gold);line-height:1;width:26px;flex:none;}
+  .stp .sh{font-weight:600;font-size:15px;margin-bottom:3px;color:var(--cream);letter-spacing:.02em;text-transform:uppercase;}
+  .stp .sd{font-size:12px;color:var(--cream-dim);line-height:1.45;font-weight:400;}
 
   /* trades chips */
-  .tchips{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px;}
-  .tchip{font-family:var(--mono);font-size:12px;color:var(--beige);border:1px solid var(--hair);background:var(--glass);border-radius:20px;padding:7px 13px;letter-spacing:.02em;}
-  .tchip.more{color:var(--brass);border-color:var(--brass);}
+  .tchips{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px;}
+  .tchip{font-size:11px;color:var(--cream);border:1px solid var(--hair);border-radius:20px;padding:7px 13px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+  .tchip.more{color:var(--gold);border-color:var(--gold);}
 
   /* connect */
   .story.connect{justify-content:center;text-align:center;align-items:center;}
-  .story.connect .big{font-size:40px;}
-  .story.connect .kw{display:inline-block;font-family:var(--mono);font-weight:600;background:var(--brass);color:var(--navy-deep);padding:5px 15px;border-radius:6px;margin:18px 0;font-size:18px;letter-spacing:.05em;box-shadow:0 4px 14px rgba(201,162,75,.35);}
-  .story.connect .contact{font-family:var(--mono);font-size:13px;color:var(--beige);line-height:1.9;}
+  .story.connect .hrule{margin-left:auto;margin-right:auto;}
+  .story.connect .kw{display:inline-block;font-family:var(--mono);font-weight:500;background:var(--gold);color:var(--navy-deep);padding:8px 18px;border-radius:4px;margin:20px 0;font-size:15px;letter-spacing:.08em;}
+  .story.connect .contact{font-family:var(--mono);font-size:12px;color:var(--cream-dim);line-height:2;}
   .story.connect .lock{justify-content:center;}
 </style>
 </head>
 <body>
   <div class="phead">
-    <h1>Highlights + Stories · Navy &amp; Beige</h1>
-    <p>Navy + brass, fine grain + glow — the locked look.<br />Screenshot each → post to Story → save to the matching Highlight.</p>
+    <h1>Highlights + Stories · BT Marketing</h1>
+    <p>Matched to your logo — navy, antique gold, Montserrat.<br />The bordered "BT" is a placeholder; your real icon drops in once you send the file.</p>
   </div>
 
   <!-- HIGHLIGHT COVERS -->
@@ -110,66 +111,71 @@
     <div class="swrap">
       <div class="snum">Story 1 · "What I Do" highlight</div>
       <div class="story paint">
-        <span class="kick">// What I Do</span>
-        <div class="big h-xl">I make businesses the <em>obvious choice</em> online.</div>
-        <div class="sub">I build websites + automation systems that save you time and make you more money — set up in days, then it runs itself.</div>
-        <div class="lock"><div class="mm">BT</div><span class="h">@btblaize · Blaize Topinio</span></div>
+        <span class="kick">What I Do</span>
+        <div class="hrule"></div>
+        <div class="big">I make businesses the <em>obvious choice</em> online.</div>
+        <div class="sub">Websites + automation systems that save you time and make you more money — set up in days, then it runs itself.</div>
+        <div class="lock"><div class="mark">BT</div><span class="h">@btblaize · BT Marketing</span></div>
       </div>
     </div>
 
     <div class="swrap">
       <div class="snum">Story 2 · "What I Bring" highlight</div>
       <div class="story paint">
-        <span class="kick">// What I Bring To The Table</span>
-        <div class="big h-xl" style="font-size:36px;margin-bottom:6px;">Not a website.<br /><em>A machine.</em></div>
+        <span class="kick">What I Bring To The Table</span>
+        <div class="hrule"></div>
+        <div class="big" style="font-size:28px;margin-bottom:4px;">Not a website.<br /><em>A machine.</em></div>
         <div class="brings">
           <div class="bring"><div class="bi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/></svg></div><div><div class="bt-h">A site that books jobs</div><div class="bt-d">Fast, mobile, ranks on Google. Live in days.</div></div></div>
-          <div class="bring"><div class="bi"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg></div><div><div class="bt-h">Leads text you back — instantly</div><div class="bt-d">No lead goes cold while you're working.</div></div></div>
+          <div class="bring"><div class="bi"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg></div><div><div class="bt-h">Leads text you back instantly</div><div class="bt-d">No lead goes cold while you're working.</div></div></div>
           <div class="bring"><div class="bi"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.4 2.5 1.2 3.6.6 4.8L8 9.6a16 16 0 0 0 6 6l1.1-1.1c.6-.6 2.3.2 4.8.6a2 2 0 0 1 1.7 2z"/></svg></div><div><div class="bt-h">Call-to-Connect</div><div class="bt-d">Form submit → you + the lead on the phone in 5 min.</div></div></div>
-          <div class="bring"><div class="bi"><svg viewBox="0 0 24 24"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg></div><div><div class="bt-h">Your own work number + full management</div><div class="bt-d">I run it. You focus on the business.</div></div></div>
+          <div class="bring"><div class="bi"><svg viewBox="0 0 24 24"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg></div><div><div class="bt-h">Work number + full management</div><div class="bt-d">I run it. You focus on the business.</div></div></div>
         </div>
-        <div class="lock"><div class="mm">BT</div><span class="h">@btblaize</span></div>
+        <div class="lock"><div class="mark">BT</div><span class="h">@btblaize</span></div>
       </div>
     </div>
 
     <div class="swrap">
       <div class="snum">Story 3 · "Process" highlight</div>
       <div class="story paint">
-        <span class="kick">// How It Works</span>
-        <div class="big h-xl" style="font-size:38px;">No risk.<br /><em>See it first.</em></div>
+        <span class="kick">How It Works</span>
+        <div class="hrule"></div>
+        <div class="big" style="font-size:30px;">No risk.<br /><em>See it first.</em></div>
         <div class="steps">
           <div class="stp"><span class="sn">1</span><div><div class="sh">See it free</div><div class="sd">I build you a real preview before you pay a dime.</div></div></div>
           <div class="stp"><span class="sn">2</span><div><div class="sh">Half to make it yours</div><div class="sd">Love it? 50% and I finish it — your logo, photos, live form.</div></div></div>
           <div class="stp"><span class="sn">3</span><div><div class="sh">Half when you love it</div><div class="sd">Balance on delivery. Then I run it for you monthly.</div></div></div>
         </div>
-        <div class="lock"><div class="mm">BT</div><span class="h">@btblaize</span></div>
+        <div class="lock"><div class="mark">BT</div><span class="h">@btblaize</span></div>
       </div>
     </div>
 
     <div class="swrap">
       <div class="snum">Story 4 · "What I Do" highlight (2nd slide)</div>
       <div class="story paint">
-        <span class="kick">// Who I Build For</span>
-        <div class="big h-xl" style="font-size:38px;">Built for <em>business owners.</em></div>
+        <span class="kick">Who I Build For</span>
+        <div class="hrule"></div>
+        <div class="big" style="font-size:30px;">Built for <em>business owners.</em></div>
         <div class="sub">If you're grinding to grow and word-of-mouth is your only plan — this is for you.</div>
         <div class="tchips">
           <span class="tchip">Contractors</span><span class="tchip">Home Services</span><span class="tchip">Automotive</span>
           <span class="tchip">Trades</span><span class="tchip">Barbers</span><span class="tchip">Fitness</span>
           <span class="tchip">Restaurants</span><span class="tchip">Real Estate</span><span class="tchip more">+ more</span>
         </div>
-        <div class="lock"><div class="mm">BT</div><span class="h">@btblaize</span></div>
+        <div class="lock"><div class="mark">BT</div><span class="h">@btblaize</span></div>
       </div>
     </div>
 
     <div class="swrap">
       <div class="snum">Story 5 · pin to any highlight (the CTA)</div>
       <div class="story paint connect">
-        <span class="kick">// Let's Grow Together</span>
-        <div class="big h-xl">Want one for your business?</div>
+        <span class="kick">Let's Grow Together</span>
+        <div class="hrule"></div>
+        <div class="big">Want one for your business?</div>
         <div class="sub">See yours first, free. No pressure.</div>
         <div class="kw">DM “SITE”</div>
         <div class="contact">📩 @btblaize<br />✉️ topiniosells@gmail.com</div>
-        <div class="lock"><div class="mm">BT</div><span class="h">Blaize Topinio</span></div>
+        <div class="lock"><div class="mark">BT</div><span class="h">BT Marketing</span></div>
       </div>
     </div>
 
