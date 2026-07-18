@@ -255,6 +255,12 @@ header.nav.scrolled{
   padding:11px 20px;border-radius:100px;border:1px solid rgba(198,162,115,.4);background:rgba(198,162,115,.07);transition:.35s var(--ease)}
 .work-link:hover{background:rgba(198,162,115,.15);transform:translateY(-2px)}
 .work-link svg{width:16px;height:16px}
+/* real client / demo portfolio cards (reuse .card base) */
+.work-cards{grid-template-columns:repeat(auto-fit,minmax(258px,1fr))}
+.work-card{display:flex;flex-direction:column}
+.work-card .work-meta{color:var(--muted);font-size:.92rem;margin-bottom:0;flex:1}
+.work-card .work-link{align-self:flex-start;margin-top:20px}
+.work-card .demo-tag{position:absolute;top:16px;right:16px;z-index:2;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);border:1px solid var(--line);padding:4px 9px;border-radius:100px;font-weight:700}
 .work-side{display:grid;gap:22px}
 .work-mini{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);padding:30px 28px;
   background:linear-gradient(160deg,var(--navy-3),var(--navy-2));display:flex;flex-direction:column;justify-content:space-between;min-height:199px}
@@ -612,49 +618,57 @@ footer{border-top:1px solid var(--line);background:linear-gradient(180deg,transp
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">The work</span>
-      <h2>Here's the level I build at.</h2>
-      <p>Take a look at a full site I built from scratch. This is the standard every project gets, whether you run a roofing crew or a corner shop.</p>
+      <h2>Real sites, real businesses.</h2>
+      <p>These are live websites I built for real clients. Click through any of them, they're up and running right now. This is the standard every project gets, whether you run a service crew or a local shop.</p>
     </div>
 
-    <div class="work-grid">
-      <!-- REAL flagship demo Blaize built -->
-      <article class="work-feature reveal">
-        <div class="work-shot">
-          <img alt="Preview of the Summit and Slate Roofing website"
-               src="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=1200&q=80"
-               onerror="this.style.display='none'">
-        </div>
-        <div class="work-body">
-          <span class="work-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Live demo · built by me</span>
-          <h3>Summit &amp; Slate Roofing</h3>
-          <p>A full contractor website with a working lead form, before-and-after gallery, service areas, financing, and the automation wired in behind it. Open it in a new tab and see for yourself.</p>
-          <a class="work-link" href="https://topiniosells-gif.github.io/btblaize-brand-assets/flagship-roofing.html" target="_blank" rel="noopener">
-            View the live site
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg>
-          </a>
-        </div>
+    <div class="grid work-cards">
+
+      <!-- REAL client site -->
+      <article class="card work-card reveal d1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
+        <h3>SAC Epoxy Flooring</h3>
+        <p class="work-meta">Epoxy floor coatings · Sacramento, CA</p>
+        <a class="work-link" href="https://sacepoxyflooring.com/" target="_blank" rel="noopener">
+          View live site
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg>
+        </a>
       </article>
 
-      <div class="work-side">
-        <!-- FILLER: swap for real client work -->
-        <article class="work-mini reveal d1">
-          <span class="filler-badge">Your project here</span>
-          <div class="mini-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 11 10-8 10 8"/><path d="M4 10v10h16V10"/><path d="M9 20v-6h6v6"/></svg></div>
-          <div>
-            <h4>Home services &amp; contractors</h4>
-            <p>Roofers, HVAC, plumbing, electrical, remodeling, landscaping. Sites built to turn searches into booked jobs.</p>
-          </div>
-        </article>
-        <!-- FILLER: swap for real client work -->
-        <article class="work-mini reveal d2">
-          <span class="filler-badge">Your project here</span>
-          <div class="mini-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 5 3h14l2 6M4 9h16v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z"/><path d="M9 21v-6h6v6"/></svg></div>
-          <div>
-            <h4>Local shops &amp; storefronts</h4>
-            <p>Small businesses that need a real presence online, an easy way to get found, and a way to capture every lead.</p>
-          </div>
-        </article>
-      </div>
+      <!-- REAL client site -->
+      <article class="card work-card reveal d2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg></div>
+        <h3>ZG Electrical</h3>
+        <p class="work-meta">Residential electrical, panels &amp; EV chargers · Sacramento &amp; Bay Area, CA</p>
+        <a class="work-link" href="https://zgelectrical.com/home" target="_blank" rel="noopener">
+          View live site
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg>
+        </a>
+      </article>
+
+      <!-- REAL client site -->
+      <article class="card work-card reveal d3">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/></svg></div>
+        <h3>Coconut Coatings</h3>
+        <p class="work-meta">Epoxy floor coatings · Tampa Bay, FL</p>
+        <a class="work-link" href="https://coconutcoatings.com/" target="_blank" rel="noopener">
+          View live site
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg>
+        </a>
+      </article>
+
+      <!-- Demo / design showcase (not a client site) -->
+      <article class="card work-card reveal d4">
+        <span class="demo-tag">Demo build</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
+        <h3>Summit &amp; Slate Roofing</h3>
+        <p class="work-meta">A sample contractor site I built to show off the full design and features</p>
+        <a class="work-link" href="https://topiniosells-gif.github.io/btblaize-brand-assets/flagship-roofing.html" target="_blank" rel="noopener">
+          View the demo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg>
+        </a>
+      </article>
+
     </div>
   </div>
 </section>
