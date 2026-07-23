@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BT Marketing, Command Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   BT MARKETING, COMMAND CENTER
+   One page. Everything visible. Built for Blaize's ADHD:
+   clear zones, top-down by urgency, tick-off checkboxes.
+   Claude keeps this current. The whiteboard stays the daily driver.
+   ============================================================ */
+:root{
+  --navy:#0f1a2e; --panel:#16243d; --panel-2:#0a1220;
+  --gold:#c6a273; --gold-2:#e0c48a;
+  --cream:#f6f2e9;
+  --txt:rgba(246,242,233,.92); --muted:rgba(246,242,233,.62); --faint:rgba(246,242,233,.45);
+  --line:rgba(246,242,233,.10); --line-2:rgba(246,242,233,.16);
+  --green:#5fbf82; --amber:#e2b34a; --red:#e2685f;
+  --maxw:1400px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--navy);color:var(--txt);line-height:1.55;
+  -webkit-font-smoothing:antialiased;padding:32px 24px 80px}
+h1,h2,h3,.disp{font-family:'Sora',sans-serif;letter-spacing:-.01em}
+a{color:var(--gold-2)}
+.wrap{max-width:var(--maxw);margin:0 auto}
+
+/* ---------- header ---------- */
+.top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px;
+  padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:32px}
+.top h1{font-size:1.75rem;font-weight:700;color:var(--cream)}
+.top h1 span{color:var(--gold)}
+.top .meta{font-size:.85rem;color:var(--faint)}
+
+/* ---------- scoreboard ---------- */
+.score{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:40px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 24px}
+.stat .k{font-family:'Sora';font-size:2rem;font-weight:700;color:var(--cream);line-height:1.1}
+.stat .k.gold{color:var(--gold)}
+.stat .l{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-top:8px}
+
+/* ---------- zones ---------- */
+.zone{margin-bottom:40px}
+.zone > h2{font-size:1.15rem;font-weight:600;color:var(--cream);margin-bottom:4px;
+  display:flex;align-items:center;gap:10px}
+.zone > .sub{font-size:.85rem;color:var(--faint);margin-bottom:20px}
+.tag{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  padding:4px 10px;border-radius:100px;border:1px solid currentColor}
+.t-hot{color:var(--red)} .t-wait{color:var(--amber)} .t-ok{color:var(--green)} .t-gold{color:var(--gold)}
+
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px}
+.card.hot{border-color:rgba(226,104,95,.4)}
+.card h3{font-size:1.05rem;font-weight:600;color:var(--cream);margin-bottom:6px}
+.card .who{font-size:.85rem;color:var(--muted);margin-bottom:14px}
+.card .next{font-size:.9rem;padding-top:14px;border-top:1px solid var(--line)}
+.card .next b{color:var(--gold-2);display:block;font-size:.72rem;text-transform:uppercase;
+  letter-spacing:.12em;margin-bottom:6px}
+
+/* ---------- checklists ---------- */
+.group{margin-bottom:24px}
+.group h4{font-family:'Sora';font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;
+  color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.group h4::after{content:"";flex:1;height:1px;background:var(--line)}
+.task{display:flex;align-items:flex-start;gap:12px;padding:10px 14px;border-radius:8px;
+  border:1px solid transparent;transition:background .2s,border-color .2s;cursor:pointer}
+.task:hover{background:rgba(246,242,233,.03);border-color:var(--line)}
+.task input{appearance:none;width:20px;height:20px;flex:none;margin-top:2px;border-radius:5px;
+  border:1.5px solid var(--line-2);cursor:pointer;transition:.2s;position:relative;background:transparent}
+.task input:hover{border-color:var(--gold)}
+.task input:checked{background:var(--gold);border-color:var(--gold)}
+.task input:checked::after{content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;
+  border:solid #0a1220;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+.task input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.task span{font-size:.95rem}
+.task input:checked + span{color:var(--faint);text-decoration:line-through}
+.task .note{display:block;font-size:.8rem;color:var(--faint);margin-top:3px}
+
+/* ---------- blocked ---------- */
+.blocked{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.blk{background:var(--panel-2);border:1px solid var(--line);border-left:3px solid var(--amber);
+  border-radius:10px;padding:18px 20px}
+.blk.red{border-left-color:var(--red)}
+.blk b{display:block;font-family:'Sora';font-size:.95rem;color:var(--cream);margin-bottom:6px}
+.blk span{font-size:.85rem;color:var(--muted)}
+.blk .fix{display:block;font-size:.82rem;color:var(--gold-2);margin-top:10px}
+
+/* ---------- done ---------- */
+details.done{background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:20px 24px}
+details.done summary{cursor:pointer;font-family:'Sora';font-size:1rem;color:var(--green);
+  font-weight:600;list-style:none;display:flex;align-items:center;gap:10px}
+details.done summary::-webkit-details-marker{display:none}
+details.done summary::after{content:"▾";margin-left:auto;color:var(--muted);font-size:.8rem}
+details.done[open] summary::after{content:"▴"}
+details.done ul{margin-top:18px;padding-left:0;list-style:none;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:10px}
+details.done li{font-size:.88rem;color:var(--muted);padding-left:22px;position:relative}
+details.done li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
+
+/* ---------- rhythm / parked ---------- */
+.rhythm{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.blk-time{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px;text-align:center}
+.blk-time .t{font-family:'Sora';font-size:1.1rem;font-weight:700;color:var(--gold)}
+.blk-time .w{font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-top:6px}
+.parked{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-size:.85rem;color:var(--muted);background:var(--panel-2);border:1px solid var(--line);
+  padding:8px 16px;border-radius:100px}
+.footnote{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:.82rem;color:var(--faint)}
+@media(max-width:640px){body{padding:20px 16px 60px}.top h1{font-size:1.4rem}.stat .k{font-size:1.6rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <h1>BT Marketing <span>Command Center</span></h1>
+    <div class="meta">Everything in one place. Updated 2026-07-23</div>
+  </div>
+
+  <!-- ============ SCOREBOARD ============ -->
+  <div class="score">
+    <div class="stat"><div class="k gold">0 / 10</div><div class="l">Sales this month</div></div>
+    <div class="stat"><div class="k">$0</div><div class="l">Revenue booked</div></div>
+    <div class="stat"><div class="k">257</div><div class="l">Verified prospects to call</div></div>
+    <div class="stat"><div class="k">28</div><div class="l">Sites built</div></div>
+    <div class="stat"><div class="k">3</div><div class="l">Live leads in play</div></div>
+  </div>
+
+  <!-- ============ LIVE NOW ============ -->
+  <div class="zone">
+    <h2>🔥 Live right now <span class="tag t-hot">Act on these</span></h2>
+    <div class="sub">Real people mid-conversation. These are worth more than any new call.</div>
+    <div class="cols">
+      <div class="card hot">
+        <h3>V&amp;A Construction</h3>
+        <div class="who">Vidal · Albuquerque NM · Remodels, flooring, fencing, ADUs<br><span style="color:rgba(246,242,233,.45)">Number's in your call sheet</span></div>
+        <div class="next"><b>Next move</b>Preview site is BUILT. Host it on GoHighLevel for a live URL, then text Vidal the link. Swap the 3 placeholder reviews for his real ones.</div>
+      </div>
+      <div class="card">
+        <h3>DentTech.LV</h3>
+        <div class="who">Called twice, no answer · follow-up text sent</div>
+        <div class="next"><b>Next move</b>Awaiting reply. Follow up if nothing back.</div>
+      </div>
+      <div class="card">
+        <h3>AMJ Painting</h3>
+        <div class="who">Called, no answer · follow-up text sent</div>
+        <div class="next"><b>Next move</b>Awaiting reply. Follow up if nothing back.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DO NEXT ============ -->
+  <div class="zone">
+    <h2>⚡ Do next <span class="tag t-gold">Tick as you go</span></h2>
+    <div class="sub">Top group first. Money before polish, always.</div>
+
+    <div class="group">
+      <h4>Money (do these first)</h4>
+      <label class="task"><input type="checkbox" data-id="m1"><span>Host V&amp;A preview on GHL, text Vidal the live link<span class="note">Hottest lead you have. Closest thing to a deposit.</span></span></label>
+      <label class="task"><input type="checkbox" data-id="m2"><span>Call the 77 verified no-website prospects<span class="note">sprint/call-list-sheet.html · already pre-screened</span></span></label>
+      <label class="task"><input type="checkbox" data-id="m3"><span>Work call list 2 (180 verified prospects)<span class="note">sprint/call-list-2.html</span></span></label>
+      <label class="task"><input type="checkbox" data-id="m4"><span>Follow up DentTech.LV and AMJ Painting</span></label>
+    </div>
+
+    <div class="group">
+      <h4>Brand + reach</h4>
+      <label class="task"><input type="checkbox" data-id="b1"><span>Buy a domain for the BT Marketing site<span class="note">~$12/yr. Then I point it at the site and set up DNS.</span></span></label>
+      <label class="task"><input type="checkbox" data-id="b2"><span>Wire the BT site contact form to a GHL webhook<span class="note">Currently demo mode. 5 minute job once you say go.</span></span></label>
+      <label class="task"><input type="checkbox" data-id="b3"><span>Put the site link in your Instagram bio</span></label>
+      <label class="task"><input type="checkbox" data-id="b4"><span>Post the pinned "5 Things" carousel, then start daily content</span></label>
+      <label class="task"><input type="checkbox" data-id="b5"><span>Link business Instagram to the BT Marketing Facebook page<span class="note">New-page cooldown has passed, should connect now.</span></span></label>
+      <label class="task"><input type="checkbox" data-id="b6"><span>Claim the Facebook page username (facebook.com/btmarketing)</span></label>
+      <label class="task"><input type="checkbox" data-id="b7"><span>Re-link WhatsApp to the BT Marketing page</span></label>
+      <label class="task"><input type="checkbox" data-id="b8"><span>Build the ManyChat "SITE" auto-DM flow<span class="note">Account created. Copy is already written in auto-dm-system.md.</span></span></label>
+    </div>
+
+    <div class="group">
+      <h4>Admin + assets</h4>
+      <label class="task"><input type="checkbox" data-id="a2"><span>Finish the extra PDFs and make the kit slick</span></label>
+      <label class="task"><input type="checkbox" data-id="a3"><span>Create a $150/mo plan in Whop<span class="note">Price is locked at $150/mo everywhere. The existing Whop monthly plan still bills $100, so a new one is needed before you sell a retainer.</span></span></label>
+    </div>
+  </div>
+
+  <!-- ============ STUCK ============ -->
+  <div class="zone">
+    <h2>⏳ Stuck or waiting <span class="tag t-wait">Needs unblocking</span></h2>
+    <div class="sub">Each one lists exactly what frees it up.</div>
+    <div class="blocked">
+      <div class="blk red">
+        <b>SMS is basically dead</b>
+        <span>A2P 10DLC is not registered, so carriers block most texts (~1% delivery).</span>
+        <span class="fix">Fix: register A2P in the GHL dashboard (needs re-billing enabled).</span>
+      </div>
+      <div class="blk red">
+        <b>GHL wallet unfunded</b>
+        <span>SMS sending is paused until it's funded. Nightly resend task is disabled on purpose.</span>
+        <span class="fix">Fix: fund the wallet, then send ONE test before resuming volume.</span>
+      </div>
+      <div class="blk">
+        <b>BT site form is demo mode</b>
+        <span>It looks real but doesn't deliver leads yet.</span>
+        <span class="fix">Fix: wire a GHL inbound webhook. Say the word.</span>
+      </div>
+      <div class="blk">
+        <b>BT site has no domain</b>
+        <span>Live on the long GitHub link for now, which works fine.</span>
+        <span class="fix">Fix: buy the domain, I handle the DNS.</span>
+      </div>
+      <div class="blk">
+        <b>Facebook page half-set</b>
+        <span>Page exists, but Instagram isn't linked and no username claimed.</span>
+        <span class="fix">Fix: both are quick now that the cooldown passed.</span>
+      </div>
+      <div class="blk">
+        <b>ManyChat flow not built</b>
+        <span>Account is created and Instagram connected. The flow itself isn't made.</span>
+        <span class="fix">Fix: log in on desktop, I walk you through it.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DONE ============ -->
+  <div class="zone">
+    <details class="done" open>
+      <summary>✅ Done, you actually built all this</summary>
+      <ul>
+        <li>BT Marketing site built and live: cinematic navy/gold, 4 real portfolio screenshots, your headshot, your number</li>
+        <li>28 client and spec sites built (flagship-roofing, reflekt-finish, v-and-a-construction and more)</li>
+        <li>Call list 1: all 239 prospects pre-screened, 77 confirmed no-website</li>
+        <li>Call list 2: 180 fresh verified no-website prospects across 12 regions</li>
+        <li>Client onboarding kit DONE: 5 branded PDFs, your business number baked in, BoldSign e-sign flow, First-Hour Playbook</li>
+        <li>Instagram @btblaize dialed: bio, headshot, highlights, pinned carousel ready</li>
+        <li>Epoxy follow cleanup: 63 unfollowed, 7 mutuals kept, full follow-back audit</li>
+        <li>Facebook untangled: BT Marketing page created, Lambo account and Øahu page deleted</li>
+        <li>Brand kit built and hosted (logo, icon, mark, story graphics)</li>
+        <li>Whop payment plans live: deposit, final, and monthly</li>
+        <li>Design standard locked: cinematic flagship look + Reflekt vibe, built to real UI and copy rules</li>
+      </ul>
+    </details>
+  </div>
+
+  <!-- ============ RHYTHM ============ -->
+  <div class="zone">
+    <h2>📅 Daily rhythm</h2>
+    <div class="sub">Calls happen when contractors actually answer. Everything else fills the gaps.</div>
+    <div class="rhythm">
+      <div class="blk-time"><div class="t">7 – 9 AM</div><div class="w">Calls · PT + MT</div></div>
+      <div class="blk-time"><div class="t">10 – 2</div><div class="w">Build</div></div>
+      <div class="blk-time"><div class="t">4 – 6 PM</div><div class="w">Calls · CT + ET</div></div>
+      <div class="blk-time"><div class="t">Evening</div><div class="w">Content</div></div>
+    </div>
+  </div>
+
+  <!-- ============ PARKED ============ -->
+  <div class="zone">
+    <h2>🅿️ Parked, on purpose</h2>
+    <div class="sub">Real ideas, just not now. They're written down so they're out of your head.</div>
+    <div class="parked">
+      <span class="chip">Convoy car-meet app</span>
+      <span class="chip">Reptile marketplace</span>
+      <span class="chip">Sin City Exotics</span>
+      <span class="chip">Main Squeeze</span>
+      <span class="chip">Content system build-out</span>
+    </div>
+  </div>
+
+  <div class="footnote">
+    Whiteboard = what you do right now. This page = where everything stands.<br>
+    Claude keeps this current. Say "update the command center" any time.<br>
+    <span style="color:rgba(226,179,74,.85)">Note: this page lives on an unlisted web link so you can open it anywhere.
+    Unlisted is not private, so no client phone numbers or personal details go on it. Those stay in your call sheet.</span>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var KEY='bt_command_center_v1';
+  var saved={};
+  try{ saved=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ saved={}; }
+  var boxes=document.querySelectorAll('.task input[type=checkbox]');
+  Array.prototype.forEach.call(boxes,function(b){
+    var id=b.getAttribute('data-id');
+    if(saved[id]) b.checked=true;
+    b.addEventListener('change',function(){
+      saved[id]=b.checked;
+      try{ localStorage.setItem(KEY,JSON.stringify(saved)); }catch(e){}
+    });
+  });
+})();
+</script>
+</body>
+</html>
